@@ -1,0 +1,983 @@
+<!-- 
+==========================================================
+WordPress カスタムHTML貼り付け用 LP
+==========================================================
+【貼り付け方法】
+1. WordPress管理画面 → 固定ページ → 新規追加
+2. 右上の「...」→「コードエディター」に切り替え
+3. このファイルの内容を全て貼り付け
+4. プレビューで確認後、公開
+
+【要確認箇所】（Ctrl+Fで検索してください）
+- 【要確認：事務所名】→ 正式な事務所名に変更
+- 【要確認：氏名】→ 税理士の氏名に変更（2箇所）
+- 【要確認：電話番号】→ 実際の電話番号に変更
+- 【要確認：住所】→ 実際の住所に変更
+==========================================================
+-->
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本橋あんしん不動産・相続相談室 | 不動産相続・税務調査対策に強い女性税理士</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Modern Premium Gothic Typography matching reference image */
+        body, button, input, select, textarea, a, span, p, h1, h2, h3, h4, h5, h6 { 
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", Arial, sans-serif !important; 
+            color: #1A1514; 
+        }
+
+        /* Micro Premium Dot Pattern for Sophisticated Tone */
+        .nihonbashi-premium-pattern {
+            background-color: #FAF8F5;
+            background-image: radial-gradient(#D6C8B5 0.8px, transparent 0), radial-gradient(#D6C8B5 0.8px, #FAF8F5 0);
+            background-size: 24px 24px;
+            background-position: 0 0, 12px 12px;
+        }
+
+        /* Smooth Editorial Fade to Blend Urban BG and Portrait natively */
+        .fv-premium-gradient {
+            background: linear-gradient(to right, rgba(253,252,250,1) 22%, rgba(253,252,250,0.85) 55%, rgba(253,252,250,0.2) 100%);
+        }
+        @media (max-width: 1024px) {
+            .fv-premium-gradient {
+                background: linear-gradient(to bottom, rgba(253,252,250,1) 45%, rgba(253,252,250,0.92) 100%);
+            }
+        }
+
+        /* Accordion transition logic */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1), padding 0.4s ease;
+        }
+        .faq-answer.open {
+            max-height: 600px;
+        }
+        .faq-icon { transition: transform 0.3s ease; }
+        .faq-btn.active .faq-icon { transform: rotate(180deg); }
+
+        /* Floating action button visibility transition */
+        .floating-cta {
+            transform: translateY(120%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .floating-cta.visible {
+            transform: translateY(0);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#0D2218',       /* Imperial Rich Dark Green */
+                            greenlight: '#1B3B2B',
+                            gold: '#A58253',        /* Prestige Champagne Gold */
+                            goldlight: '#C5A982',
+                            rose: '#B26265',        /* Deep Luxurious Rose Wood */
+                            roselight: '#FAF1F1',
+                            charcoal: '#1A1514',
+                            silk: '#FAF8F5'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased nihonbashi-premium-pattern m-0 p-0 overflow-x-hidden">
+
+    <div class="relative min-h-screen">
+
+        <!-- Navigation Header -->
+        <nav class="fixed w-full bg-brand-silk/95 backdrop-blur-sm z-50 border-b border-brand-goldlight/20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-22">
+                    <div class="flex flex-col justify-center py-2">
+                        <span class="text-brand-gold font-bold text-[9px] tracking-[0.25em] uppercase">日本橋あんしん不動産・相続相談室</span>
+                        <span class="text-brand-green font-bold text-base md:text-lg tracking-widest mt-1">【要確認：事務所名】女性税理士事務所</span>
+                    </div>
+                    <div class="hidden lg:flex items-center space-x-10">
+                        <a href="#agitation" class="text-brand-charcoal hover:text-brand-rose text-xs tracking-widest transition-colors font-semibold">不動産相続の難しさ</a>
+                        <a href="#strengths" class="text-brand-charcoal hover:text-brand-rose text-xs tracking-widest transition-colors font-semibold">選ばれる理由</a>
+                        <a href="#audit" class="text-brand-charcoal hover:text-brand-rose text-xs tracking-widest transition-colors font-semibold">税務調査対策</a>
+                        <a href="#profile" class="text-brand-charcoal hover:text-brand-rose text-xs tracking-widest transition-colors font-semibold">税理士紹介</a>
+                        <a href="#special-deduction" class="text-brand-charcoal hover:text-brand-rose text-xs tracking-widest transition-colors font-semibold">土地減額簡易診断</a>
+                        <a href="#cases" class="text-brand-charcoal hover:text-brand-rose text-xs tracking-widest transition-colors font-semibold">解決事例</a>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="hidden sm:flex flex-col text-right mr-1">
+                            <span class="text-[8px] text-gray-500 font-bold tracking-[0.15em]">ご相談窓口（平日9:00〜18:00）</span>
+                            <span class="text-brand-green font-bold text-sm tracking-widest">【要確認：電話番号】</span>
+                        </div>
+                        <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="inline-flex items-center justify-center px-6 py-3 rounded-full text-[10px] font-bold text-white bg-brand-green hover:bg-brand-greenlight transition-all shadow-md tracking-[0.2em]">
+                            無料相談予約
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- First View (FV) with Tokyo Urban Premium Real Estate Background -->
+        <header class="relative pt-24 bg-white overflow-hidden border-b border-brand-goldlight/20">
+            <!-- Background Real Estate Image - Urban Premium Tokyo View -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80" 
+                     alt="洗練された都心の不動産アパートマンション外観" 
+                     class="w-full h-full object-cover opacity-15 filter blur-[0.3px]">
+                <div class="absolute inset-0 fv-premium-gradient"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-16 md:pt-20 lg:pt-24">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+                    <!-- Copywriting & Strong Badges -->
+                    <div class="lg:col-span-7 pb-16 lg:pb-28">
+                        <div class="inline-flex items-center px-5 py-2 rounded-full text-[10px] font-bold bg-brand-roselight text-brand-rose border border-brand-rose/20 mb-8 tracking-[0.25em]">
+                            🌸 資産3億円以上の不動産・高額相続専門
+                        </div>
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl tracking-widest font-normal text-brand-green leading-[1.6]">
+                            複雑を極める不動産相続に、<br>
+                            <span class="font-bold text-brand-rose">卓越した専門知識</span>と<br>
+                            <span class="font-bold text-brand-gold">女性税理士の緻密な専属伴走</span>を。
+                        </h1>
+                        <p class="mt-6 text-xs md:text-sm text-gray-600 leading-relaxed max-w-xl tracking-wider">
+                            都心の地主様、複数のアパート・一棟ビルを抱える不動産オーナー様へ。特例の戦略的適用、事前のスキーム構築から、生前・事後の複雑な権利調整まで、すべて代表女性税理士が専属対応いたします。
+                        </p>
+                        
+                        <!-- Highly Visible Key Strengths (3 Badges) -->
+                        <div class="mt-10 space-y-4 max-w-lg">
+                            <div class="flex items-center bg-white/95 backdrop-blur-sm p-4 rounded-xl border-l-4 border-brand-rose shadow-sm border border-brand-goldlight/10">
+                                <span class="text-xl mr-4">💎</span>
+                                <span class="text-xs md:text-sm font-bold text-brand-charcoal tracking-widest">代表女性税理士が最初の面談から最後まで責任を持って専属対応</span>
+                            </div>
+                            <div class="flex items-center bg-white/95 backdrop-blur-sm p-4 rounded-xl border-l-4 border-brand-gold shadow-sm border border-brand-goldlight/10">
+                                <span class="text-xl mr-4">🏡</span>
+                                <span class="text-xs md:text-sm font-bold text-brand-charcoal tracking-widest">都心高額地主・不動産管理会社の税務コンサル経験15年以上</span>
+                            </div>
+                            <div class="flex items-center bg-white/95 backdrop-blur-sm p-4 rounded-xl border-l-4 border-brand-green shadow-sm border border-brand-goldlight/10">
+                                <span class="text-xl mr-4">🛡️</span>
+                                <span class="text-xs md:text-sm font-bold text-brand-charcoal tracking-widest">書面添付率100％！高額案件でも実地税務調査を極限まで回避</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-12 sm:flex sm:justify-center lg:justify-start">
+                            <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="w-full sm:w-auto flex items-center justify-center px-10 py-5 text-xs font-bold rounded-full text-white bg-brand-rose hover:bg-opacity-95 transition-all transform hover:scale-102 tracking-[0.25em] shadow-lg shadow-brand-rose/30">
+                                ✉️ 現状を整理する「初回無料相談」を予約
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Portrait Image Integration with high-fidelity styled fallback in case local file loading is restricted -->
+                    <div class="lg:col-span-5 flex justify-center lg:justify-end">
+                        <div class="relative w-full max-w-sm lg:max-w-md min-h-[350px] flex items-end">
+                            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAEQAP4DASIAAhEBAxEB/8QAHQAAAgEFAQEAAAAAAAAAAAAAAAECAwQFBwgGCf/EAEEQAAEDAwIDBQYDBgQFBQAAAAEAAgMEBREGIRIxQQcTUWFxCCIygZGhFELBFSNSYoKxJDNyopKywtHwNENT4fH/xAAaAQEAAwEBAQAAAAAAAAAAAAAAAQIEBQMG/8QAIhEBAQACAgMBAAMBAQAAAAAAAAECEQMSBCExQQUiUXEy/9oADAMBAAIRAxEAPwDqtMIwpAIEEwmAE0AnhMBMBAsJgJ4TQLCMJowgSaeEY8kCQpYRhBFClhGEEUKWEYQRQpJYQRwjAUsIwgjhIhSIQghgJYU8IIQUyEsKphIhBTLVEhVCEsBBSKiQqpaokIKmAmAEAKWAgAAmAgBPCAwmhMBAYRhMJgeSBAIwpYQgSMKSECwjCaWQgEJcTc8wqdRVU1OzjqKiKFvi94aPugq4RhWdDdbXXvcyiuVJUuZ8TYpmvLfXBV7hAkYUsJYQLCRCkhBHCjhVEkEMJYVTCSCCRCmVEoIEJFVEiEFMqJCqEKKCoAE0J4QGEYTATAQACeEBNAsJownhAkYUsJgII4Twnjda+7dO0al7OdIPuHCye4znu6KnccBz+rnfyjr8h1S3SZLbqF2xdqmn+zi1iSvf+JuMzSaaijd77/N38LfNcp6p7d9d6lq3ubdzaaNxw2no/dAHm7mfqtYayv8Ac9RXipu11q5KqrneXSSSO5Z34QOg8uQCwM1Q6FgPIcwM8143K1pxwxxbHrNba1cRJQapuZmc4c5nHfn4+i83ctY6pvNaTe7xcaxx2JfMSPosRZ7uA8Mfk7jfHNZCaVoe4Oha6OT3msc3mPDZV0nt72zllvrqUjFbNE8fCQ7hPyOy292cdvGpNNzxUl3lfebZsCyY/vmN/lf19Dn5LnJzmsy1j3OhztxdPVXtFWSBvdtcS0cmk7j0VJLjfVe3eZzWUfSjROqrLq+yx3Wy1Qmhds9hGHxu/hcOhWdwvn12Va6uuj9QRXW1znYhs8Bd7szOrXfoei7u0bqGg1RpykvdtfxQVLOLB5sdyc0+YOQvfDk7er9ZOXh6e58ZbCSmlhejxRwkQp4SIQRQpYSQRwkQpFCCGFHCqJEIKZCgQqpUSMoJBMBMBMBABCaAEAmgKSBBNPCEBhGEIQRmkbFE+WRwaxgLnE9AF88+3XW9Zr7tDrrh3r3W+nkMFBETs2Np2OPP4j6rsX2k9SHTfZJdpYXllTWNFHAQd8v2P+3iXBsUYZGXk+8cgfqvDly99Wrgw9XJiqtrGHck45+ZWLqg+d4wN+QHRZqWndK4kgjoNl6LQulXXi8wRFh7vIz4YVMs5jN174cdzuotuz3s1vepJO/hjDIQfifsCvc9oPZjcKeyRVFMwOqaZmCIwffA++f/AMXR2iNOwWy1QwxQtaOEbAYV1fLUHxu9z7LFfIzt26E8Xj1p8/pu+ilIcCDnl5qcE+JGkDZbO7WtHfsjVtTA2LEFSzv4XD8u52+oI+i8CbVIyUAtPC/YHGwctGPLMozZ+PcKv6Jx2kYeFw5hdI+yXrd1tvR03WSH8HcjmHiPwTgYHycNvXC50t9O4x8JGHsXotL1s1ovFNUU7yyaGRssZHRwIIP1Vrlr+0/FJh2nW/r6LoWO0zc4rzp6gusDgY6qnZKMdMjOFkVsl3NuXZq6oQhClAwkQE0IIkJEKaSCGEiFMqJCCJaoEKookIGE00AIABSAQEwEAAnhCEAhCEAhCOiDl/2273IayyafZJiKON9XK3xcTwtPyAd9Vy7NVCSpdGDs3EYHLJO5W2/a0u/4ntYuoMhcykYyJu/w8LBkfUlaRpDmZmeZBcT5lYblvO10scdceMeippKYzshOC7O4/Rb+7EtPR8Dah0Y3wc4XP2gaE3G/xZBIMmB9V1npGot9it8NK9+ZMDIY3JCzc+dt03ePhMZtsagY1oG2AFO4QtkZy5hYKn1VZWcLZqh0LuWHsIWapbhRVgBgmZI09QV5a9PWfWpe2exUlRZ4rnPETLRSgcTejXEDf549MrTl9tFG2Jvdtb+8HECHZAI/8/uupNaWSK72WsoTkMqYXRkgZIyNiPTmufqyyVEVEaK4gwVFI4cAew+8BgbeI28uqY2xeyZT2173UYma8ANOeFwVCvi4TxAYLTvg9Dz/AFRqOOSlrXBjnAuI2cCA4jqsZUV0xZC9wGX8/rgrVMrrbJlJ7juT2Ybkbj2UUbC7iNJNJB8s8Q+zgtoFaC9iesdNoW50ryT3VY1wz4OYB/0rf+Fu4f8AxHI8ia5KjhJSSwV6PEkIQgEIQgRCRCkgoKZCSmQo4QAUgkFIIABNCEAhCYQJMJpgIEAlIQ2NzjyAyVUwre5Nc631DWfEY3AeuEHzU7Xb3Je9V3i5cXE+rrXvG+di4kD6YXlmAMkDgMYwPsFlaqhqbhf30ccRdKJyC30yiislXVXqG3Nj/eS1Aix4HOFztyOt1v2Nt+zzpYVDH3OWMlvFwsyPuuhqEW600/eSdzE0fE92OfqVidB2OmstmpbfCzAjYBnqT4q41JosX+MMqKydsLTnum8neqw5Z210ccdTStJf9HXGo/CTVlHLL/C5gysxQ0NFTND6JjAw7jg5LXOn+yimtOoTWuqZaqi4uMUUsLTGHAOA3O4A4jsOe2V72z219noXwmZ8jHPzE12/AMD3cncjOefirZTGfLtGG79mmbk4xTgjqvM3ul05SkVN5kga5x2MpySfJeqMvFRx7clrvtL7OXavbIPx0lO55BjeGB/AMEFoB8clRJLfabbplG2fROo6F1O2mttWwgjAjAcPHHVaH7eezij0fao7tayTSST8HC45LHEZA9Nitv2bszmt7aKeKubDXU8r5ZKiGPu+/wCJxOHNGG4GcDwVbt4sTrv2V3OCQF89M1tUzHixwJ+2VfC6z1v08899N/rCewzWOldqujBJihFGWjPUiXP9vsunQFzp7EdqdT2fUl2LSGVdTDG0kf8Axsdn/mXRi6/FNYxwea7zpYSwpIXo8kMJYUyEsIIpKRCWECQhCBEJYUkkCAUggIQCE0YQATAQApYQACaEIBJwyMJoQcXa70MNIdv1ZAYhFQ3hklRbTzDnHBLAehBDhj08Vl6nTNupZrVcKZjBWRVAklaW4d15jnzK3h7Relm6g7O6yvpYyLxZmmvt0zR77Hsw4geIIBGPRaj0bqq06r0pFdnmKGspmYqwRjunAb5J/KcZB/ULleXx3DLtPjueDzzk4+l+xsG2ytc1jxtkL0tE8OYAQvJ290ZpYpYnBzHNBaRyIPIrPW+b3Qssuq2Y3cZlsbcFywd6naJmsysoZ8RHJPJePvtwipHTT1TJiRgMaxhc4+gCm6Wwxtr0tM8utwOORV7SvaYm9cLzFLqOgbaX5ZN7rc8IYeI/LxWWs9ZFVUsc8QeI3gEcQwR8k3C41mstLc7bLzurY31VhuVPDEZZJad8cbP4nuBDR8yQstJM1rDg9FkNIUramqkqnta5keA0Efm8V68ePfOYx4c2c4uO5VW7K9MM0foa22PiD5YY+Kd4HxSO3cfTJwPIBeoQOSF2JNTT523d3QhCFKAjCEIEQlhSSIQQISU8JEIIpJlCATQhAJhAUgEAE0IQCEIQCEIQJ7WvYWOAIIwQeq4W9omw3/sf1Deo9OSdxYtRxOMZ4OLgByHRgkbFvEceTh1XdeFrz2guz9naN2dVlkjjYbgz99Que/hDZgCBk+BBIXnyYdo9eLkuFaY9nfUDb92W2lz5e8npGfhJs8wWbDP9PCfmtp0QAbkFcw+zvT6i0br6/wCjr1QzUnC3vnxPH+W5pADh0wQ4b+i6Po6wYbvyO64/kY9M67fi59sJWXkqWRbSuDceKZdSStDpHR48SVa3q10V1g4KuPiGMjfGPNeEn01NQ1pYaqpdTk+64yE49Qf+6pG7h45yXXbTZTo7c2Ey5h4cbu2wotmpcNbHIzB5YK8BHZwaZxjrqiQn4Yxw81nNKaWpaVwra1neTh3FHxOzwengmT05eDHjx332z87JeWdjyXt9I0v4e0R5G8hLzleVoYHXC5R0zNgTufAdSthRxtjjbG0Ya0AD0W3wcLu51wv5Hl9TAEJKWELpOUihPCSAQhCAQhCAIUVJIoIEJKZCiQgEBB5pgIGFJIJoBCEIBCEwgMJoTQIBPCeFjNV3226Y07W367ziGioojLK7mcDoB1JOwHiUHjO1OPQNPcYaq91lqotRy07oqAy1AjnmGfgAyC8E8gc78t1rt9S+hmD35dEevguW9ea+qdZdrTNY3XjZEyujkiiDiRDExw4Wj0G58Tk9V1ZanQXK3xSAtfHKwOa4ciCFyP5Gazldn+Ov9LK9PaK6Gso28LwXAeKybKWCdo42hy1xPRXG0TGotryWczGeXy8FWp9bSU54aqlmjI54bkfZZcc5+t/TfxsZttpImF7I2gqjIWxtP0AXkqfWQq2hsEUz8+Ix/dZa3zvmkZNWysghBBe5xwGN6knyCt2xt1EZS4zdbD0jaTRUxqahv+ImHI/lb4LOkIicySJr43texzQWuacgjxTXc48JhjMY+b5M7yZXKkQlhSSwrqI4QpEJYQRKSkUiECQhCAQhCBFIqSSCKYSUggaEIQCEJhABNATAQAUsICxOrdR2XSlknvN+r4qKihGXPedyfADmSfAIMsdhk7BcXe2b2ps1Bd26JsdVx223v4q2Rh92efwBHNrf758AsH27+0fftYx1Nm04JLPZHZa7hd+/qG8vfI5A/wAI+ZK0YxzpImucSSQCcotItJgQcrpX2YNYi5W12l66UfiqNvFTE/ni8PVp+xHgucJmjGVk9HXur05fqS80Tg2alk4xnk4dWnyIyF4eTwTlw1+tHj814s9/jvSOJr2Yc1W89ko5nB74wD4gKWkrpTXux0V1pHh8NVE2RuOmRyWXkjHjhcPX5Xc3+xiG2ikphxMAz5J1cTJaGSGRoMcrSxwPIgjBWSfGwjJJKsrq0xwtY0HJaSPookk+Jvv61x7JXaxVU9zl7MNW1LjPTTOgt00p3Dmkgwknptlv08F1MQvnB2xx1Fj7Wam50TpKYTOjmiljPCWygDJBHI5GV0B2Te09TGiprfrqmk7wYZ+0KduRyxmRn3y36L6Diz7YTJ89zcfTOx0+ksdpy/2bUdtjuNjuVPX0sgyHwvzjyI5g+RWSXo8SSwpJIIkJFTKiUESElIhJAkIQgEFCEEQFJRapIBCEIBSSCYQMJhea17rnS+hrc2u1LdYqNjyRFHguklI6NaNz/Zcp9sntMXvUDZbXo1stltx911Rxf4mUeo2YPTJ8+iJ03j21dvWmez9stuoiy8XwAj8PE/3ID07xw5f6Rv6LivtP7R9U6/uv47UFxfM1hPc07fdihB6Nb9N+Z6leWqqh873Pke57nHJJOSSrR53ROlKZx4Sr9rXMYGuaW7ciMKwdyKpt4mPDo3OY7xacFBkZAHNKoNdk4HIdfFNk0rqXuZGRn3sh/Dh2PDbYhIYCkdG+ydrcl02jq6XcAzURcen5mD/mH9S6WMYexpB5r53aYu9XYb/RXiicBUUkzZWZGQcHkfEHkfVd+aIuFFqbS1DfbZUv7irhEga52Sx35mnzByFyvL8fWXbH9dbw+ftj0v2Mn+FdxAYyreug4rnE0/D3RV9TSyMJZIN+WVXkhZI9rnAE8OFkmO2u2uXfaE0w6piuM4jkFRQsbUxY+F8QcWvPnw5Z/wAS0PSSEMxn1C701XaKW5WuooqhjSypbPCSf4TC8H+32XBbonU1bPSP2dFI5hB8QcLq+Jd4a/xyvMx1nv8A16fRmsNQ6SuAuGn7rUUMv5jG73Xjwc3k4eRBXRmgPamLo2U+sLOJOQNVQ7H1LDsfkR6Lkl7nDLQ7hJ8QrimeIWBoJPUknOVr0yafSzReu9J6wg7ywXqmqngZdDxcMrfVhwfnhekK+X9BdKqiqGVNHUywTRuDmPjeWuaR1BHJbn0F7SetLGIYbw6O+UbHDvBOMT8PUB46/wCoFRpGnbCFgOz/AFfZNcaagv1jqO9p5Rh7Ds+J/Vjh0I/+wvQYRVHCRCkkUECkpEJFAkIQgQCaAhAJhJSCACp1lRFSUc1VO8MihYXvceQAGSVVC177SNz/AGV2K6knEpjdJTdw0jmTI4Mx9CUHCna7rW5a51rXXyvnkcySQtpoi4lsMQJ4WNHTb6nJ6rxxJVSqOZT6qjySLVCVpHvdFTO6uOYx0VF428xsVOhSICoyBzHiVgyW9PEK4KiR4BEKjHNkjD28iFLh8FaxHuZeH8j+XkVdolHqul/Y41gQ6t0hV1DsY/EUjXbjmA9o8NyD83LmnAWZ0de6nTupKG803+ZSyh/DxEcbfzNJHQjI+arnj2ml+PPplt9F+7a5uwSfhoyeQWF0VdmXbT1JcI3l8U0Yc1xHxA7tI+WPssvX5NO8A44hw/XZcnPDrdOxhn2jDz1kLK+nikHEGU8lQ9p8Nm/9ZXDfaoyng7TL5+FibFA6tkcxjRgAE+C7ghgiku1ykmwWMjiiBI5D3iR9S36Bcje0XpibT+pKWpmzxVnfH5iQnOeueJbPFup/1i8v3f8AjWk7gX4W29c6X7OKLszoLzp69vmubgwPjfOH964/EOH8pHlyxutQzbgHxCoNJB57LVcbbLKxy6XrpOCQAHYjZNkxa5Wj3ZkZ6Kr1BV0Oh/Yn1hLau0GXTM05FHdoyGsPITMBc0+Xu8Q89l2uvmH2dXx+m9b2m/Mbx/g6mOctzjiDXZI+Y2X01tlZBcbbTV9K8PgqYmyxuHVrgCD9Cq1WqxSUikiECEiFMqJQQQmUkAhCEApBIKQQMBaA9uK8fg+ze22lknC+vrwXNz8TI2kn7lq6AC499vC699rSw2lr8iloHTFvgZHkf2jCipn1zFNu9xUMEjIUn5UWk7jG/wDdWSju05aPkk5wyD0Ox8knvLdzkt+4Sk3iLm4O2UCc3BSwpRESxZHNGN8FBRlYHNIPI81UpnlzeF/xN2Pn5pubtyVF+WuEjRkjmPEIhdIHMFNhDm8TTkHdGN1KXT3stawmrNPu0/PUnjt0nFHFz44nfPocjbxC3U3UsE13dbXRlscBa6SZxAHLO/hg8/RcUdjmpxpTXlvuE0hZRvd3FX7ucxO2Jx5bH5Lsu42eG4W19VbKSN1UC17JWuwZM9CORG/p1WTm45b7bOHkvX0z9pp4allVN3oIlqHOGd27Yb9Pc+6539sWGkljopAHCqo5u73JOY3Z38M5AW+9GVUdPa47Q2tD7ixhqHsewCYRPlfwuwQM/CRnHMb81rX2nrRBX6HrK3uGx1LIy9zyN3cBDs/P9U4510jkve3bkA7wg+BVL5KtHvE4YVLqtcZCd8Y8gqwOyptBLifBSGxSJV2O4C0jwI/svoH7KGof2/2M2tkk3eVFuLqKXPMBp9wf8Bavn0/H7vPiV1r7AtyfJFqi2FxLGmCdg8CeNp/sFFL8dUJFNBUKIFIhSKiUECkpFRQCEIQMKYUQpBA18+/aouElf246gL3EtgfHCwE8g2Nuw+efqvoJnAXzV7ZLh+0+1XU1bxZbJcpw0/yh5A+wCirYvFOCgNz5qZIxhU8gOwQrAkaT7wHqPFWrnGLLhuw8x4K96fqqNRFxDIIB/ugs7fLwyubzCvnjkRyWGiJjrC3kszG7LcdD9iiIiOSiRuqnCclRc3dEqcB7uQxn4Xbt/wCyuMKhI3ibgHB6EeKnC8yDfAI2IRCq3Yrsn2dtXHUfZzRU8sp/HW1xpJj+ZzAMtPPfIwM+IK428ltP2a9UOsGvY6CaQtpLoBA8Z2En/tn65H9SpyTeL24brLVdGdpVgtVXrnRWpLs6aOFkslA6SKV0bu9cOKEktIPDxMeOfNzc7ZVbtltcVwsNXDBLM+WaglgazvMxHiBwcE4znqN/Fe2t5hq6d8MrGuLCJGe6DgjbI/8AOqwet4Hfs4yd2XMjeOJzcctvHphZ5ltr66cCwc3Aqk74j5K/ucX4e91tOBju55GY8MOIVlIP3mwWuMFgi+IpkYKUWxJ81UeN1IhVu4WxfP8ARdAew7fxbO0yW1yv4Y7tSuiAPV7Pfb9g4fNc93AkiBviT+i9T2cXyTTerbReo8/4KtimIB+JrXDI+YyFFH08QqVJPHU0kVTE4OjlYHtcOoIyFVUKEVEqRUSgiVEqTlEoEhCEEgpBRCmEEZzw08jvBpP2Xy31BKZr5XTOJJfUPcT6uK+oV0dwWurf/DC8/wC0r5ZV7uKrmceryfuoWi0Ki4Zb59E/FAPiMKwi0nhPiEnuJbsM+IypEDOQqcmWnI5IMPMCLgfAjZZOncCwZWNqf/XZx0V5CdkRF+3fnzTc3IVGJ2W5J5c/RXDcHmiVItVF37p/eDl+b0V2WjCpOZ48lIkCCMqvTTSQTxzwyOjkjcHMc04LSNwQrOD924xHcc2nyVw3OUHcHYzrWl1TZ6GsY5zah+YZWPbw8UjWsL+H+JoL27jxWd1u6eO1VsEbSQWODRnnsSucvZ1vNdLa66x2+sbDc6GpiuVuZJKGNqCSI5KYuOw7wOYB/Nwnoum9Tx99aH1boXRvkgDnMcMlpI5evRZMseu43cXJ3stcD6mfx6qur+RdWTH/AHlYtxzLsry9v473XSfxVEh/3FWIOX5WqfGPL7VRm7SfNVObVTi+BVByVkKFYdovmrimdhgOeqtK34ox6/oq0RxGFUfSD2db+dR9jmnq57uKWKn/AA0u+TxRngyfUAH5rYK5n9gu/Gp0vfdPySZNJUsqY2k78MjSDjyywfVdMKFb9BUCpnkolEIFRKm5QKBIQhBIKQ5KIUggsNUyGLTN0kbzZRyuHyYV8t6s5e89eIr6lajj73Ttyi/jpJW/VhXy2qxiR4/mKhaLTxQ09CgbZSf4q0EjnHNJ4yN8IByhxPyQYWrH+P8A6VcRO2VCu2r/AOn9VON3RELuF/C/B5K8iILefLZY0HcK9gf9wiVwMY25oOMJA7ck/ugpzs4mZaPebuFKJ4ewObyITJBG2SraJxjqHQk4Dveb+v8A55oPa9lb4jrKkoZ6w0cNeDTOqAcdy47xydPhkax3MfCuy6Wsu7uzJtTfIWNucVM9swa8Oa/hJAeHDYhwaHAj+JcGQTPgnjlidwyMcHNPgQchdZNr57X7L03ewy00tNQSQs438XEPeDHg9Q4YcPIry5J7e/BfdclVEpmmkldze9zvqVS5eqbPgCMZcAPVezxVGDHinkZyo5UXOQUqs5kYOuMqqw4aMK1mdmfHgArhh2Cgb39iu9C2dskFG95ay5UktP5FwAeP+T7ru9fMfsiu4sfaRp+6vfwR09whdI7wZxAO+2V9N2kOaCORUVWmVEqR5KJRCDlEqTlEoF0QgckIGFMKAUwghVs7yjmYeTo3D7L5ZXuPublVRAfBM5v0JX1Qk/yn/wCkr5b6u2v9x4Rt+Kkx/wARUVaMODzQRnmot5qXXmrCiSWE7ZCXeuzs3bzVZ2PIqhOCBty8lIxVc7NwJ/lU2HdU6rH43+gKTMghQhdN3bkqtCcFv0VGI5CqE4x4ZRK8Y7wUw71Vq1+xCbHO4tzsoFwT4DCtq7LWNmaMujOfUdVXztslIOJhB5EKUHC9r4w4ciFu6/amnHsr2yinrZJ5qmpdStL3ZLWNkOGegaMDywtB26Qse+med2nLfRZS4XiqfZaKxEn8NHVSVI3/ADOa1uP9v3UWbXwy1tSbswZRGRuR44UZH8MRPUDZQhBawbnKsqq53Ki8gbozhW9bJwU73dcYCJUond5I53iVeMJwN1j6EktV8HDHPdBd0byyZrgTkHK+n/Ztd237QFiu7X8f4qghkcf5iwcQ+uV8vafY5XfHsZXtt17GaejL8yW2qlp3DyJ4x9n/AGUVFbqPJQUiolQqiVE80yooP//Z" 
+                                 alt="日本橋の相続専門女性税理士" 
+                                 class="w-full h-auto object-contain block select-none">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Agitation Section (FV Direct Bottom) - Focused on Nihonbashi Price Inflation -->
+        <section id="agitation" class="py-24 bg-brand-cream border-b border-brand-goldlight/10 relative">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-xs text-brand-rose font-bold tracking-[0.25em] block mb-3">RISK & ATTENTION</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-brand-green tracking-[0.15em] leading-[1.5]">
+                        【インフレ、不動産相続を一般の税理士に任せて大丈夫？】
+                    </h2>
+                    <div class="w-16 h-[1px] bg-brand-gold mx-auto mt-5"></div>
+                </div>
+
+                <!-- Nihonbashi Context Alert Box -->
+                <div class="bg-white rounded-3xl p-8 border border-brand-gold/30 shadow-sm max-w-4xl mx-auto mb-16 text-center">
+                    <span class="inline-block px-4 py-1 bg-brand-roselight text-brand-rose text-[10px] font-bold rounded-full tracking-widest mb-4">⚠️ 地価暴騰・都心不動産インフレの罠</span>
+                    <h3 class="text-lg md:text-xl font-bold text-brand-green mb-4 tracking-widest">
+                        特に日本橋エリアは、23区の中でも「不動産の値上がり率」が極めて高いエリアです
+                    </h3>
+                    <p class="text-xs md:text-sm text-gray-600 leading-[2.0] tracking-widest max-w-3xl mx-auto text-left md:text-center font-medium">
+                        近年の急激な都心地価の上昇により、日本橋をはじめとする中央区周辺に土地・マンションをお持ちのご家庭では、**「以前想定していた評価額」を大幅に超え、何もしなければ基礎控除額を上回って課税対象になってしまうケース**が急増しています。不動産を含めた総資産額が3億円を超える場合、適用要件を一つ誤るだけで、税額に数千万円の差が発生します。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                    <!-- Problem 1 (Restructured: Focus on transfer costs and policy alignment) -->
+                    <div class="bg-white p-8 rounded-2xl border border-brand-goldlight/10 shadow-sm relative">
+                        <div class="absolute -top-4 left-6 bg-brand-rose text-white px-4 py-1 text-[9px] font-bold rounded-md tracking-[0.2em]">課題 ①</div>
+                        <h3 class="text-base font-bold text-brand-green mb-3 mt-2 tracking-widest font-sans">移転コストと方針決定のロードマップ</h3>
+                        <p class="text-xs text-brand-gold font-bold tracking-wider mb-2">所有権の移転に伴いコストが発生してしまう</p>
+                        <p class="text-xs text-gray-600 leading-[1.8] tracking-wider font-medium">
+                            不動産は、所有権を移す度に、イニシャルコストが掛かることと課税関係 of 検討が必要になります。よって、先々、その不動産をどうしたいのか、誰の所有にしたいのかなど丁寧なヒアリングをすることで、課税上最もメリットが出る方法をご案内し、何度も所有権の変更をすることがない様に、方針を固定するのが重要です。
+                        </p>
+                    </div>
+                    <!-- Problem 2 -->
+                    <div class="bg-white p-8 rounded-2xl border border-brand-goldlight/10 shadow-sm relative">
+                        <div class="absolute -top-4 left-6 bg-brand-rose text-white px-4 py-1 text-[9px] font-bold rounded-md tracking-[0.2em]">課題 ②</div>
+                        <h3 class="text-base font-bold text-brand-green mb-4 mt-2 tracking-widest">生前対策・法人化の高度な分岐点判断</h3>
+                        <p class="text-xs text-gray-600 leading-[1.8] tracking-wider font-medium">
+                            ただ相続税を支払うだけではなく、次世代へ手残りを多く渡すための「資産管理法人」の設計。デッドクロス問題への正しい準備が、その後のキャッシュフローを大きく変えます。
+                        </p>
+                    </div>
+                    <!-- Problem 3 -->
+                    <div class="bg-white p-8 rounded-2xl border border-brand-goldlight/10 shadow-sm relative">
+                        <div class="absolute -top-4 left-6 bg-brand-rose text-white px-4 py-1 text-[9px] font-bold rounded-md tracking-[0.2em]">課題 ③</div>
+                        <h3 class="text-base font-bold text-brand-green mb-4 mt-2 tracking-widest">都心の高額相続は税務調査に狙われやすい</h3>
+                        <p class="text-xs text-gray-600 leading-[1.8] tracking-wider font-medium">
+                            不動産の評価が高額になるほど、税務署側のチェック体制は厳しくなります。生前の資金移動の解明など、高額な不動産資産税務のセオリーを熟知した専門家の対策が必要です。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-16 text-center bg-brand-roselight p-8 rounded-2xl border border-brand-rose/10 max-w-3xl mx-auto">
+                    <p class="text-xs md:text-sm text-brand-green leading-[1.8] tracking-widest font-bold">
+                        💡 高額な都心不動産を安全かつ最適に引き継ぐには、数字の処理だけでなく、親族間の繊細な感情バランスまで整えられるプロフェッショナルによる高度な調整力が最大の鍵となります。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Strengths (3 Major Benefits) -->
+        <section id="strengths" class="py-24 bg-white border-b border-brand-goldlight/10">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20">
+                    <span class="text-xs text-brand-gold font-bold tracking-[0.25em] block mb-3">OUR STRENGTHS</span>
+                    <h2 class="text-3xl font-normal text-brand-green tracking-[0.15em]">
+                        日本橋あんしん相談室が選ばれる3つの理由
+                    </h2>
+                    <div class="w-16 h-[1px] bg-brand-gold mx-auto mt-5"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
+                    <!-- Strength 1 -->
+                    <div class="bg-brand-cream rounded-3xl p-8 border border-brand-goldlight/15 shadow-sm text-center flex flex-col justify-between items-center">
+                        <div>
+                            <div class="w-16 h-16 rounded-full bg-brand-roselight flex items-center justify-center text-brand-rose font-bold text-xl shadow-inner mb-6 mx-auto">
+                                01
+                            </div>
+                            <h3 class="text-lg font-bold text-brand-green mb-4 tracking-widest">実務経験15年以上の深い不動産専門力</h3>
+                            <p class="text-xs text-gray-600 leading-[1.8] tracking-wider text-left font-medium">
+                                不動産の税務は極めてマニアックであり、担当の不慣れから過大申告になるケースが多発しています。不動産鑑定士等との強い連携や、特例計算ロジックを熟知しているからこそ、あなたの資産を1円たりとも無駄にしません。
+                            </p>
+                        </div>
+                        <div class="mt-8 w-full bg-white p-3 rounded-xl border border-brand-goldlight/10 text-[10px] text-gray-500 tracking-widest">
+                            日本橋を中心とする都心の複雑な土地構造に完全対応
+                        </div>
+                    </div>
+
+                    <!-- Strength 2 -->
+                    <div class="bg-brand-cream rounded-3xl p-8 border border-brand-goldlight/15 shadow-sm text-center flex flex-col justify-between items-center">
+                        <div>
+                            <div class="w-16 h-16 rounded-full bg-brand-roselight flex items-center justify-center text-brand-gold font-bold text-xl shadow-inner mb-6 mx-auto">
+                                02
+                            </div>
+                            <h3 class="text-lg font-bold text-brand-green mb-4 tracking-widest">税務調査を防ぐ「書面添付率100％」</h3>
+                            <p class="text-xs text-gray-600 leading-[1.8] tracking-wider text-left font-medium">
+                                申告書の正確性を税理士が保証する「書面添付制度」を標準仕様で100%実施します。これにより、お客様に直接調査官が訪れるリスクを排除し、税務調査そのものを極小化します。
+                            </p>
+                        </div>
+                        <div class="mt-8 w-full bg-white p-3 rounded-xl border border-brand-goldlight/10 text-[10px] text-gray-500 tracking-widest">
+                            万が一の際も、税理士が前面に立ちお客様の自宅調査を防止
+                        </div>
+                    </div>
+
+                    <!-- Strength 3 -->
+                    <div class="bg-brand-cream rounded-3xl p-8 border border-brand-goldlight/15 shadow-sm text-center flex flex-col justify-between items-center">
+                        <div>
+                            <div class="w-16 h-16 rounded-full bg-brand-roselight flex items-center justify-center text-brand-rose font-bold text-xl shadow-inner mb-6 mx-auto">
+                                03
+                            </div>
+                            <h3 class="text-lg font-bold text-brand-green mb-4 tracking-widest">威圧感ゼロ・女性ならではの細やかな傾聴</h3>
+                            <p class="text-xs text-gray-600 leading-[1.8] tracking-wider text-left font-medium">
+                                従来の「敷居が高くて怒られそうな税理士事務所」のイメージを覆します。ご家族の複雑な人間関係やご不満も、プライベートサロンのような雰囲気で丁寧にお聞きし、温かい解決案を提案します。
+                            </p>
+                        </div>
+                        <div class="mt-8 w-full bg-white p-3 rounded-xl border border-brand-goldlight/10 text-[10px] text-gray-500 tracking-widest">
+                            一歩踏み込んだ資産背景への配慮で、多くのオーナー様から絶大な支持
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Highly Visualized Tax Audit protection Section -->
+        <section id="audit" class="py-24 bg-brand-cream border-b border-brand-goldlight/10">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-xs text-brand-gold font-bold tracking-[0.25em] block mb-3">TAX AUDIT PROTECTION</span>
+                    <h2 class="text-3xl font-normal text-brand-green tracking-[0.15em] leading-snug">
+                        安心の差が際立つ。当相談室が提供する「万全の税務調査対策」
+                    </h2>
+                    <div class="w-16 h-[1px] bg-brand-gold mx-auto mt-5"></div>
+                    <p class="text-xs text-gray-500 mt-6 tracking-widest leading-relaxed max-w-2xl mx-auto">
+                        高額な不動産資産は税務署のターゲットになりがちです。しかし、事前の万全な調書作成と「書面添付制度」で、その脅威を徹底的にシャットアウトします。
+                    </p>
+                </div>
+
+                <!-- High-Contrast Side-by-Side Dashboard -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto">
+                    
+                    <!-- Left Column: Danger / Ominous Red Theme -->
+                    <div class="bg-white rounded-3xl border border-red-200 shadow-md p-8 md:p-10 flex flex-col justify-between transition-all hover:scale-[1.01]">
+                        <div>
+                            <!-- Header Warning Tag -->
+                            <div class="flex justify-between items-center border-b border-red-100 pb-5 mb-6">
+                                <span class="px-4 py-1.5 bg-red-100 text-red-700 text-[10px] font-bold rounded-md tracking-wider">一般的な申告方法（書面添付なし）</span>
+                                <span class="text-red-500 font-bold text-xs tracking-widest">🚨 調査リスク高</span>
+                            </div>
+                            
+                            <h4 class="text-lg md:text-xl font-bold text-brand-charcoal mb-6 tracking-widest leading-snug">
+                                税務署からの突然の電話連絡と<br>自宅への厳しい実地立ち入り調査
+                            </h4>
+                            
+                            <ul class="space-y-4 mb-8 text-xs text-gray-600 tracking-wider font-medium">
+                                <li class="flex items-start">
+                                    <span class="text-red-500 mr-2.5 font-bold">✕</span>
+                                    <span>申告書の提出後、不審点があると税務署から直接あなたのご自宅へ連絡が入ります。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-red-500 mr-2.5 font-bold">✕</span>
+                                    <span>数名の国税調査官が自宅へ訪問し、過去の預金通帳、日記、金庫、タンスまで確認される高いストレス。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-red-500 mr-2.5 font-bold">✕</span>
+                                    <span>指摘を受けた場合、本来払う必要のなかった重加算税や延滞税が課せられます。</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Visual Warning Footer -->
+                        <div class="bg-red-50 p-5 rounded-2xl border border-red-100">
+                            <p class="text-xs text-red-800 font-bold tracking-widest text-center leading-relaxed">
+                                精神的にも体力的にも過酷な実地調査に、お客様ご自身で立ち向かわなければなりません。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Safety / Gold-Green Shield Theme (Most Prominent) -->
+                    <div class="bg-[#11291E] rounded-3xl border-4 border-brand-gold shadow-2xl p-8 md:p-10 flex flex-col justify-between text-white relative overflow-hidden transition-all hover:scale-[1.02]">
+                        <!-- Subtle background glow -->
+                        <div class="absolute -right-24 -top-24 w-64 h-64 bg-brand-gold/10 rounded-full filter blur-3xl"></div>
+                        
+                        <div class="relative z-10">
+                            <!-- Header Secure Tag -->
+                            <div class="flex justify-between items-center border-b border-brand-greenlight pb-5 mb-6">
+                                <span class="px-4 py-1.5 bg-brand-gold text-white text-[10px] font-bold rounded-md tracking-widest">当相談室の標準仕様（書面添付100％実施）</span>
+                                <span class="text-brand-gold font-bold text-xs tracking-widest">🛡️ 万全の税務調査対策</span>
+                            </div>
+                            
+                            <h4 class="text-lg md:text-xl font-bold text-brand-gold mb-6 tracking-widest leading-snug">
+                                税務調査の防波堤として女性税理士が常時介入。<br>ご自宅への立ち入りを水際で徹底防止
+                            </h4>
+                            
+                            <ul class="space-y-4 mb-8 text-xs text-brand-roselight tracking-wider font-medium">
+                                <li class="flex items-start">
+                                    <span class="text-brand-gold mr-2.5 font-bold">✔</span>
+                                    <span>提出時に「税理士による詳細な保証書類（書面）」を添付するため、税務署はまず税理士にのみ連絡をします。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-brand-gold mr-2.5 font-bold">✔</span>
+                                    <span>税務署からの疑問に対しては、税理士が代理で対面論述しクリアするため、実地調査自体が不要になります。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-brand-gold mr-2.5 font-bold">✔</span>
+                                    <span>【実績】当相談室が関与した相続申告において、ご自宅への突発的な立ち入り調査はほぼ完全に回避しています。</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Visual Safe Footer -->
+                        <div class="bg-brand-greenlight p-5 rounded-2xl border border-brand-gold/30 relative z-10">
+                            <p class="text-xs text-brand-roselight font-bold tracking-widest text-center leading-relaxed">
+                                あなたのプライバシーと財産を、女性税理士の細密な説明責任が完全に保護します。
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Representative Message Section -->
+        <section id="profile" class="py-24 bg-white border-b border-brand-goldlight/10 overflow-hidden">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Highlighted Focus Banner -->
+                <div class="bg-brand-roselight/60 border-y-2 border-brand-rose/20 py-6 px-8 text-center rounded-3xl mb-16">
+                    <span class="text-brand-rose font-bold text-xs tracking-[0.3em] uppercase block mb-1">REAL ESTATE SPECIALIST</span>
+                    <p class="text-sm md:text-base text-brand-green font-bold tracking-widest leading-relaxed">
+                        「複雑に絡み合う親族関係の調整から、高度な特例判断・生前対策まで。<br class="hidden md:block">
+                        女性税理士ならではの極めてきめ細かく、一切妥協のない完全専属対応をお約束します」
+                    </p>
+                </div>
+
+                <div class="lg:flex items-center gap-16">
+                    <div class="lg:w-2/5 mb-10 lg:mb-0 flex flex-col items-center">
+                        <!-- Frame surrounding the portrait -->
+                        <div class="relative w-64 h-64 rounded-full overflow-hidden border-4 border-brand-gold shadow-xl bg-brand-cream flex items-center justify-center">
+                            <img src="data:image/jpeg;base64,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" 
+                                 alt="代表税理士プロフィール写真" 
+                                 class="w-full h-full object-cover object-top scale-110">
+                        </div>
+                        <span class="text-xs text-brand-gold font-bold tracking-widest mt-6">代表税理士【要確認：氏名】</span>
+                    </div>
+                    
+                    <div class="lg:w-3/5">
+                        <span class="text-xs text-brand-gold font-bold tracking-[0.25em] block mb-3">MESSAGE FROM REPRESENTATIVE</span>
+                        <h2 class="text-2xl md:text-3xl font-bold text-brand-green tracking-[0.15em] mb-6 leading-snug">
+                            1対1の専属伴走で、<br>
+                            複雑極まる資産税務を完全にやり遂げる。
+                        </h2>
+                        
+                        <div class="space-y-6 text-xs md:text-sm text-gray-600 leading-[1.9] tracking-wider font-medium font-sans">
+                            <p>
+                                税金の相談というと、「怒られそう」「何もわからないまま行くのが気恥ずかしい」と躊躇してしまう方が本当に多くいらっしゃいます。特に不動産を含む高額相続問題は、ご家族への愛着、これからの不安、プレッシャーなど、数字の計算だけでは割り切れない複雑な想いが渦巻く領域です。
+                            </p>
+                            <p>
+                                私は15年以上の実務の中で、一貫して「まずはそのご状況や想いをすべて受け止めること」から進めてまいりました。専門的な解説も、対話を通じてきれいに噛み砕いてお伝えします。
+                            </p>
+                            <p class="font-bold text-brand-green bg-brand-roselight/30 p-4 rounded-xl border border-brand-rose/10 font-sans">
+                                自宅やアパート、店舗等を引き継ぐことになり何をすればいいか分からないオーナー様、生前からの確実な資産防衛スキームを望む地主様まで、誰もがほっと肩の力を抜いて、本質的な対策を練られるパートナーでありたいと願っております。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consultation to Solution Flow Section -->
+        <section id="steps" class="py-24 bg-brand-cream border-b border-brand-goldlight/10">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-xs text-brand-gold font-bold tracking-[0.25em] block mb-3">CONSULTATION FLOW</span>
+                    <h2 class="text-3xl font-normal text-brand-green tracking-[0.15em]">
+                        無料相談から、安心 of の解決に至るまでの4ステップ
+                    </h2>
+                    <div class="w-16 h-[1px] bg-brand-gold mx-auto mt-5"></div>
+                    <p class="text-xs text-gray-500 mt-6 tracking-widest leading-relaxed">
+                        まずはお話をお聞きすることから。当相談室があなたのパートナーとして伴走し、円満な解決まで丁寧にナビゲートいたします。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto relative">
+                    <!-- Step 1 -->
+                    <div class="bg-white rounded-3xl p-6 border border-brand-goldlight/15 shadow-sm flex flex-col justify-between relative">
+                        <div class="absolute -top-4 left-6 bg-brand-gold text-white text-[10px] font-bold px-3.5 py-1 rounded-full tracking-widest uppercase">Step 01</div>
+                        <div class="pt-4">
+                            <span class="text-3xl block mb-4">🍵</span>
+                            <h4 class="text-sm font-bold text-brand-green mb-3 tracking-widest">初回無料相談</h4>
+                            <p class="text-[11px] text-gray-600 leading-[1.8] tracking-wider font-medium">
+                                アクセス抜群の日本橋オフィスにて。まずは現状のお悩みやご家族のご状況をお聞かせください。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white rounded-3xl p-6 border border-brand-goldlight/15 shadow-sm flex flex-col justify-between relative">
+                        <div class="absolute -top-4 left-6 bg-brand-gold text-white text-[10px] font-bold px-3.5 py-1 rounded-full tracking-widest uppercase">Step 02</div>
+                        <div class="pt-4">
+                            <span class="text-3xl block mb-4">🔍</span>
+                            <h4 class="text-sm font-bold text-brand-green mb-3 tracking-widest">精密な財産評価と分析</h4>
+                            <p class="text-[11px] text-gray-600 leading-[1.8] tracking-wider font-medium">
+                                15年の実務ノウハウから、日本橋などの都心特有の複雑な土地評価を調査。使える特例や生前贈与、法人化メリットを可視化します。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white rounded-3xl p-6 border border-brand-goldlight/15 shadow-sm flex flex-col justify-between relative">
+                        <div class="absolute -top-4 left-6 bg-brand-gold text-white text-[10px] font-bold px-3.5 py-1 rounded-full tracking-widest uppercase">Step 03</div>
+                        <div class="pt-4">
+                            <span class="text-3xl block mb-4">📄</span>
+                            <h4 class="text-sm font-bold text-brand-green mb-3 tracking-widest">お見積もり・方針の事前合意</h4>
+                            <p class="text-[11px] text-gray-600 leading-[1.8] tracking-wider font-medium">
+                                最適な節税スキームを組み込んだ解決計画と、クリアで詳細なお見積もりをご提示。内容に心からご納得いただいてから契約に進みます。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="bg-white rounded-3xl p-6 border border-brand-green text-white text-[10px] font-bold px-3.5 py-1 rounded-full tracking-widest uppercase">Step 04</div>
+                    <div class="pt-4">
+                        <span class="text-3xl block mb-4">🛡️</span>
+                        <h4 class="text-sm font-bold text-brand-green mb-3 tracking-widest">専属サポートと円満解決</h4>
+                        <p class="text-[11px] text-gray-600 leading-[1.8] tracking-wider font-medium">
+                            女性税理士が全ての申告書を作成。書面添付制度（100％実施）により将来の税務調査の不安を完全防御。完了後もチャット等で寄り添い続けます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Interactive Real Estate Special Deduction Simulator (小規模宅地等の特例簡易シミュレーター) -->
+        <section id="special-deduction" class="py-24 bg-white border-b border-brand-goldlight/10">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-xs text-brand-gold font-bold tracking-[0.25em] block mb-3">LAND SPECIAL DEDUCTION SIMULATOR</span>
+                    <h2 class="text-3xl font-bold text-brand-green tracking-[0.15em]">
+                        小規模宅地等の特例 土地評価減額シミュレーション
+                    </h2>
+                    <div class="w-16 h-[1px] bg-brand-gold mx-auto mt-5"></div>
+                    <p class="text-xs text-gray-500 mt-6 tracking-widest leading-relaxed max-w-2xl mx-auto font-sans">
+                        所有している土地の用途、面積、周辺の路線価を選択するだけで、特例適用後に土地の評価額がどれほど劇的に圧縮されるかを瞬時に試算します。
+                    </p>
+                </div>
+
+                <!-- Simulator Interface Card -->
+                <div class="bg-brand-cream rounded-3xl border border-brand-goldlight/30 shadow-lg p-6 md:p-10 max-w-4xl mx-auto">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                        
+                        <!-- Left Inputs Column -->
+                        <div class="lg:col-span-6 space-y-6">
+                            <h4 class="text-sm font-bold text-brand-green tracking-widest border-b border-brand-goldlight/20 pb-2 font-sans">土地と用途の情報を選択</h4>
+                            
+                            <!-- Input 1: Land Type Tile Buttons -->
+                            <div>
+                                <label class="block text-xs font-bold text-brand-charcoal tracking-widest mb-3">① 土地の用途（特例の区分）</label>
+                                <div class="grid grid-cols-1 gap-3">
+                                    <button id="btn-type-home" class="py-3.5 px-4 text-left text-xs font-bold rounded-xl border-2 border-brand-green bg-brand-green text-white transition-all tracking-widest flex justify-between items-center font-sans">
+                                        <span>🏡 亡くなった方の自宅の土地（特定居住用）</span>
+                                        <span class="text-[10px] text-brand-roselight">最大 80% 減額 / 330㎡まで</span>
+                                    </button>
+                                    <button id="btn-type-rent" class="py-3.5 px-4 text-left text-xs font-bold rounded-xl border-2 border-brand-goldlight/20 bg-white hover:bg-brand-roselight transition-all tracking-widest flex justify-between items-center text-brand-charcoal font-sans">
+                                        <span>🏢 貸している土地・アパート等（貸付事業用）</span>
+                                        <span class="text-[10px] text-brand-gold font-normal">最大 50% 減額 / 200㎡まで</span>
+                                    </button>
+                                    <button id="btn-type-business" class="py-3.5 px-4 text-left text-xs font-bold rounded-xl border-2 border-brand-goldlight/20 bg-white hover:bg-brand-roselight transition-all tracking-widest flex justify-between items-center text-brand-charcoal font-sans">
+                                        <span>🏪 お店や事務所の土地（特定事業用）</span>
+                                        <span class="text-[10px] text-brand-gold font-normal">最大 80% 減額 / 400㎡まで</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Input 2: Land Size Slider -->
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <label class="text-xs font-bold text-brand-charcoal tracking-widest">② 土地の敷地面積（㎡）</label>
+                                    <span id="display-land-size" class="text-sm font-bold text-brand-green">165 ㎡</span>
+                                </div>
+                                <input id="slider-land-size" type="range" min="10" max="500" step="5" value="165" class="w-full accent-brand-green h-2 bg-brand-goldlight/20 rounded-lg cursor-pointer">
+                                <div class="flex justify-between text-[10px] text-gray-400 mt-2 tracking-widest font-sans">
+                                    <span>10 ㎡</span>
+                                    <span>250 ㎡</span>
+                                    <span>500 ㎡</span>
+                                </div>
+                            </div>
+
+                            <!-- Input 3: Price Slider -->
+                            <div>
+                                <div class="flex justify-between items-center mb-3 font-sans">
+                                    <label class="text-xs font-bold text-brand-charcoal tracking-widest">③ 周辺の相続税路線価（万円 / ㎡）</label>
+                                    <span id="display-land-price" class="text-sm font-bold text-brand-green">120 万円</span>
+                                </div>
+                                <input id="slider-land-price" type="range" min="10" max="300" step="5" value="120" class="w-full accent-brand-green h-2 bg-brand-goldlight/20 rounded-lg cursor-pointer">
+                                <div class="flex justify-between text-[10px] text-gray-400 mt-2 tracking-widest font-sans">
+                                    <span>10万円 / ㎡</span>
+                                    <span>150万円 / ㎡</span>
+                                    <span>300万円 / ㎡</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Results Column -->
+                        <div class="lg:col-span-6 bg-white rounded-2xl border border-brand-goldlight/25 p-6 md:p-8 flex flex-col justify-between h-full shadow-inner">
+                            <div>
+                                <h4 class="text-xs font-bold text-brand-gold tracking-widest mb-6 uppercase font-sans">Calculation Result / 特例試算結果</h4>
+                                
+                                <div class="space-y-4 text-xs mb-6 font-sans">
+                                    <div class="flex justify-between border-b border-brand-silk pb-2">
+                                        <span class="text-gray-500 tracking-wider">土地の更地評価額（特例適用前）</span>
+                                        <span class="font-bold text-brand-charcoal"><span id="out-original-value">1億9,800</span>万円</span>
+                                    </div>
+                                    <div class="flex justify-between border-b border-brand-silk pb-2">
+                                        <span class="text-gray-500 tracking-wider">特例による減額の割合</span>
+                                        <span class="font-bold text-brand-rose"><span id="out-discount-rate">80</span>% 減額</span>
+                                    </div>
+                                    <div class="flex justify-between border-b border-brand-silk pb-2">
+                                        <span class="text-gray-500 tracking-wider">限度面積判定</span>
+                                        <span class="font-bold text-brand-charcoal"><span id="out-limit-status">全額に適用可能</span></span>
+                                    </div>
+                                </div>
+
+                                <!-- Dynamic Evaluation Reduction Bar -->
+                                <div class="mb-6 font-sans">
+                                    <span class="text-[10px] text-gray-400 font-bold block mb-2 tracking-widest">評価圧縮メーター（特例適用後）</span>
+                                    <div class="w-full h-4 bg-red-100 rounded-full overflow-hidden relative flex">
+                                        <div id="bar-after-value" class="h-full bg-brand-green transition-all duration-300" style="width: 20%;"></div>
+                                        <div id="bar-saved-value" class="h-full bg-brand-rose transition-all duration-300" style="width: 80%;"></div>
+                                    </div>
+                                    <div class="flex justify-between text-[9px] text-gray-400 mt-1.5 tracking-wider">
+                                        <span>適用後評価額 (<span id="out-after-percentage">20</span>%)</span>
+                                        <span class="text-brand-rose font-bold">特例による減額分 (<span id="out-saved-percentage">80</span>%)</span>
+                                    </div>
+                                </div>
+
+                                <!-- Substantial Reduction Amount -->
+                                <div class="text-center bg-brand-roselight/50 rounded-xl p-5 border border-brand-rose/10">
+                                    <span class="text-[10px] text-brand-rose font-bold tracking-[0.2em] block mb-1">特例による土地評価の減額額（圧縮枠）</span>
+                                    <p class="text-2xl md:text-3xl font-bold text-brand-rose tracking-wide">
+                                        ▲ <span id="out-saved-value">1億5,840</span>万円
+                                    </p>
+                                </div>
+
+                                <!-- Important Disclaimer Notice -->
+                                <p class="text-[10px] text-gray-400 mt-4 leading-relaxed tracking-widest font-sans">
+                                    ※上記の計算結果は入力された条件に基づく簡易的なシミュレーション（試算）であり、実際の相続申告における路線価の補正、限度面積判定、特例要件の合致を保証するものではありません。
+                                </p>
+                            </div>
+
+                            <!-- Real Estate Special Deduction Hint (Reflecting the important logic of tax integration) -->
+                            <div class="mt-6 pt-4 border-t border-brand-goldlight/10 text-[11px] text-gray-500 leading-[1.8] tracking-wider font-sans">
+                                <p class="font-bold text-brand-green mb-1">📌 税理士からの一言：</p>
+                                <p class="font-medium">
+                                    不動産は、所有権を移す度に、イニシャルコストが掛かることと課税関係の検討が必要になります。よって、先々、その不動産をどうしたいのか、誰の所有にしたいのかなど丁寧なヒアリングをすることで、課税上最もメリットが出る方法をご案内し、何度も所有権の変更をすることがない様に、方針を固定するのが重要かと思います。
+                                </p>
+                                <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="block text-center mt-5 py-3 bg-brand-green text-white font-bold rounded-lg text-xs tracking-[0.15em] hover:bg-brand-greenlight transition-all shadow-md">
+                                    所有権移転コストも含めた「トータル負担最小化」を相談する
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Studies Section -->
+        <section id="cases" class="py-24 bg-brand-cream border-b border-brand-goldlight/10">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20">
+                    <span class="text-xs text-brand-gold font-bold tracking-[0.25em] block mb-3">CASE STUDIES</span>
+                    <h2 class="text-3xl font-bold text-brand-green tracking-[0.15em]">
+                        不動産相続・税務対策の実績解決事例
+                    </h2>
+                    <div class="w-16 h-[1px] bg-brand-gold mx-auto mt-5"></div>
+                </div>
+
+                <div class="space-y-12 max-w-5xl mx-auto">
+                    <!-- Case 1 -->
+                    <div class="bg-white rounded-3xl p-8 md:p-10 border border-brand-goldlight/10 shadow-sm flex flex-col md:flex-row gap-8 items-center">
+                        <div class="md:w-1/4 text-center">
+                            <span class="text-xs font-bold text-brand-rose tracking-[0.2em] uppercase">Case 01</span>
+                            <h4 class="text-lg font-bold text-brand-green mt-1 tracking-widest">評価額の圧倒的圧縮</h4>
+                            <div class="text-5xl my-4">🏡</div>
+                            <span class="inline-block px-4 py-1.5 bg-brand-roselight text-brand-rose text-[9px] font-bold rounded-full tracking-widest">実家の相続</span>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h4 class="text-base md:text-lg font-bold text-brand-green mb-4 tracking-widest">小規模宅地等の特例適用により、一戸建て土地評価を80%減額</h4>
+                            <p class="text-xs text-gray-600 leading-[1.8] tracking-wider mb-5 font-medium">
+                                【状況】他界されたお母様と同居されていたご親族。一般的な事務所では「要件に若干の不確実性あり」とされ特例適用を見送られそうになっていましたが、当事務所が土地の境界線調査、同居実態の公的書類を緻密に整備。
+                            </p>
+                            <div class="bg-brand-cream p-4 rounded-xl border border-brand-gold/15 flex flex-wrap justify-between items-center text-xs tracking-wider font-semibold">
+                                <span class="text-gray-500">当初の想定評価額：約8,200万円</span>
+                                <span class="font-bold text-brand-rose">▶︎ 対策後評価額：1,640万円（約6,500万円の圧縮成功）</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case 2 -->
+                    <div class="bg-white rounded-3xl p-8 md:p-10 border border-brand-goldlight/10 shadow-sm flex flex-col md:flex-row gap-8 items-center">
+                        <div class="md:w-1/4 text-center">
+                            <span class="text-xs font-bold text-brand-rose tracking-[0.2em] uppercase">Case 02</span>
+                            <h4 class="text-lg font-bold text-brand-green mt-1 tracking-widest font-sans">トータル移転コスト対策</h4>
+                            <div class="text-5xl my-4">🏢</div>
+                            <span class="inline-block px-4 py-1.5 bg-brand-roselight text-brand-rose text-[9px] font-bold rounded-full tracking-widest">賃貸アパート・一棟ビル</span>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h4 class="text-base md:text-lg font-bold text-brand-green mb-4 tracking-widest">何度も名義変更を繰り返さないための、出口を見据えた生前法人化設計</h4>
+                            <p class="text-xs text-gray-600 leading-[1.8] tracking-wider mb-5 font-medium">
+                                【状況】複数アパートを所有し、所得税率の高騰と先々の相続に悩まれていたオーナー様。将来の親族間での遺産分割と最終的な所有権の着地点を丁寧なヒアリングで整理。何度も登記費用や取得税を発生させないよう、設立当初から「最終出口」を意識した最適な資産管理法人スキームを構築しました。
+                            </p>
+                            <div class="bg-brand-cream p-4 rounded-xl border border-brand-gold/15 flex flex-wrap justify-between items-center text-xs tracking-wider font-semibold">
+                                <span class="text-gray-500">対策前の名義・課税予測：無駄な多重登記コストと高額な所得税</span>
+                                <span class="font-bold text-brand-rose">▶︎ 対策後：1度の手続きで将来への移転方針を完全固定 ＆ 年間手残り約310万円アップ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case 3 -->
+                    <div class="bg-white rounded-3xl p-8 md:p-10 border border-brand-goldlight/10 shadow-sm flex flex-col md:flex-row gap-8 items-center">
+                        <div class="md:w-1/4 text-center">
+                            <span class="text-xs font-bold text-brand-rose tracking-[0.2em] uppercase">Case 03</span>
+                            <h4 class="text-lg font-bold text-brand-green mt-1 tracking-widest">生前贈与と二次相続</h4>
+                            <div class="text-5xl my-4">🛡️</div>
+                            <span class="inline-block px-4 py-1.5 bg-brand-roselight text-brand-rose text-[9px] font-bold rounded-full tracking-widest">相続人複数の場合</span>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h4 class="text-base md:text-lg font-bold text-brand-green mb-4 tracking-widest">書面添付制度を完全導入し、不動産多数の遺産整理でも税務調査ゼロ</h4>
+                            <p class="text-xs text-gray-600 leading-[1.8] tracking-wider mb-5 font-medium">
+                                【状況】複数の貸家と遊休地を保有するオーナー様。相続税申告にあたって不動産評価のロジック、生前の資金移動の明確な説明を記載した『書面添付』を行い、提出。税務調査を一切受けることなく完了。
+                            </p>
+                            <div class="bg-brand-cream p-4 rounded-xl border border-brand-gold/15 flex flex-wrap justify-between items-center text-xs tracking-wider font-semibold">
+                                <span class="text-gray-500">不動産相続・財産額：約3.5億円</span>
+                                <span class="font-bold text-brand-green">▶︎ 書面添付率 100% 適用：税務署からの直接調査なしで無事完了</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Accordion -->
+        <section id="faq" class="py-24 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-xs text-brand-rose font-bold tracking-[0.25em] block mb-3">Q&A</span>
+                    <h2 class="text-3xl font-bold text-brand-green tracking-[0.15em]">
+                        不動産相続のよくあるご質問
+                    </h2>
+                    <div class="w-16 h-[1px] bg-brand-gold mx-auto mt-5"></div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-brand-cream border border-brand-goldlight/20 rounded-xl overflow-hidden shadow-sm">
+                        <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-brand-cream hover:bg-brand-roselight transition-all">
+                            <span class="font-bold text-brand-green text-xs md:text-sm tracking-widest">Q. 他の税理士事務所に相談中ですが、セカンドオピニオンも可能ですか？</span>
+                            <span class="faq-icon text-brand-rose font-bold text-sm">▼</span>
+                        </button>
+                        <div class="faq-answer px-6 bg-white text-gray-600 text-xs font-medium">
+                            <div class="pb-6 pt-3 leading-[1.8] tracking-wider font-sans">
+                                A. はい、お気軽にお越しください。「今の説明で小規模宅地等の特例が完全に使えているか不安」「もう少し分かりやすく丁寧に説明してほしい」といった理由での転院・並行相談を多数受けております。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-brand-goldlight/20 rounded-xl overflow-hidden shadow-sm">
+                        <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-brand-cream hover:bg-brand-roselight transition-all">
+                            <span class="font-bold text-brand-green text-xs md:text-sm tracking-widest">Q. 書面添付制度を使うと何がそこまで違うのですか？</span>
+                            <span class="faq-icon text-brand-rose font-bold text-sm">▼</span>
+                        </button>
+                        <div class="faq-answer px-6 bg-white text-gray-600 text-xs font-medium">
+                            <div class="pb-6 pt-3 leading-[1.8] tracking-wider font-sans">
+                                A. 書面添付を行うことで、税務署からいきなり納税者に「税務調査が入る」のではなく、まず事前に税理士へ「意見聴取」が求められます。当相談室が事前に適正な根拠を示して回答することで、約8割以上の確率で直接調査が回避され、実地調査なしで完了します。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-brand-goldlight/20 rounded-xl overflow-hidden shadow-sm">
+                        <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-white hover:bg-brand-roselight transition-all">
+                            <span class="font-bold text-brand-green text-xs md:text-sm tracking-widest">Q. 不動産オーナーではない、一般的な相続についても相談可能ですか？</span>
+                            <span class="faq-icon text-brand-rose font-bold text-sm">▼</span>
+                        </button>
+                        <div class="faq-answer px-6 bg-white text-gray-600 text-xs font-medium">
+                            <div class="pb-6 pt-3 leading-[1.8] tracking-wider font-sans">
+                                A. もちろんです。不動産をお持ちでない場合や、一般的な現金・有価証券の相続手続き・生前贈与についても、きめ細やかに専属対応いたしますので安心してご連絡ください。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ultimate Call to Action & Consultation Panel -->
+        <footer id="contact" class="bg-brand-green text-white pt-24 pb-28 lg:pb-12 relative overflow-hidden border-t-8 border-brand-gold">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <span class="text-xs text-brand-gold font-bold tracking-[0.25em] block mb-4">FREE CONSULTATION</span>
+                <h2 class="text-3xl font-bold text-white mb-6 leading-[1.5]">不動産相続の不安、まずはお気軽にお話しください</h2>
+                <p class="text-brand-roselight text-xs md:text-sm mb-12 max-w-lg mx-auto leading-[1.8] tracking-widest font-medium">
+                    料金を心配されることなく、まずは現状 of 財産評価や、将来もめないためのアドバイスを『初回60分完全無料』にてお受けいたします。強引な売り込みなどは絶対に行いませんのでご安心ください。
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-6 mb-16 max-w-md mx-auto">
+                    <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="px-8 py-4.5 bg-brand-rose text-white text-xs font-bold rounded-full hover:bg-opacity-95 transition-all shadow-lg flex items-center justify-center tracking-[0.25em] text-center font-bold">
+                        ✉️ 無料相談 予約フォームはこちら
+                    </a>
+                    <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="px-8 py-4.5 bg-white text-brand-green text-xs font-bold rounded-full hover:bg-gray-50 transition-all shadow-lg flex items-center justify-center tracking-[0.25em] text-center font-bold">
+                        💬 LINEでちょっと質問してみる
+                    </a>
+                </div>
+                
+                <div class="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 font-sans">
+                    <div class="mb-6 md:mb-0 text-left">
+                        <span class="font-bold text-white text-base">日本橋あんしん不動産・相続相談室</span><br>
+                        <p class="mt-2 text-gray-400 text-xs tracking-widest leading-[1.8] font-medium">東京都中央区日本橋【要確認：住所】</p>
+                    </div>
+                    <div class="space-x-4">
+                        <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="hover:text-white transition-colors tracking-widest font-semibold">お問合せ窓口</a>
+                        <a href="#" class="hover:text-white transition-colors tracking-widest font-semibold">プライバシーポリシー</a>
+                    </div>
+                </div>
+                <div class="mt-8 text-[10px] text-gray-500 text-center font-sans">
+                    &copy; 2026 Nihonbashi Anshin Real Estate & Inheritance. All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+        <!-- Floating Bottom CTA for Smartphone Conversion Optimization -->
+        <div id="floating-cta" class="floating-cta fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t border-brand-goldlight/30 px-4 py-3 z-40 lg:hidden shadow-[0_-5px_20px_rgba(0,0,0,0.05)]">
+            <div class="grid grid-cols-2 gap-3 max-w-md mx-auto">
+                <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="flex items-center justify-center py-3 bg-brand-rose text-white text-[10px] font-bold rounded-full shadow-md tracking-wider text-center font-bold">
+                    ✉️ 無料相談 予約フォーム
+                </a>
+                <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="flex items-center justify-center py-3 bg-brand-green text-white text-[10px] font-bold rounded-full shadow-md tracking-wider text-center font-bold">
+                    💬 公式LINEで質問
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Interactive Accordion Controller
+        const faqButtons = document.querySelectorAll('.faq-btn');
+        faqButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const isOpen = answer.classList.contains('open');
+
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.classList.remove('open');
+                    ans.previousElementSibling.classList.remove('active');
+                });
+
+                if (!isOpen) {
+                    answer.classList.add('open');
+                    button.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll Detector for Smartphone Floating CTA (Reveals after scrolling 300px)
+        window.addEventListener('scroll', () => {
+            const floatingCta = document.getElementById('floating-cta');
+            if (window.scrollY > 300) {
+                floatingCta.classList.add('visible');
+            } else {
+                floatingCta.classList.remove('visible');
+            }
+        });
+
+        // --- INTERACTIVE LAND SPECIAL DEDUCTION SIMULATOR LOGIC ---
+        let currentType = 'home'; // 'home', 'rent', 'business'
+        let landSize = 165; // ㎡
+        let landPrice = 120; // 万円 / ㎡
+
+        // UI Controls
+        const btnTypeHome = document.getElementById('btn-type-home');
+        const btnTypeRent = document.getElementById('btn-type-rent');
+        const btnTypeBusiness = document.getElementById('btn-type-business');
+        
+        const sliderLandSize = document.getElementById('slider-land-size');
+        const displayLandSize = document.getElementById('display-land-size');
+        
+        const sliderLandPrice = document.getElementById('slider-land-price');
+        const displayLandPrice = document.getElementById('display-land-price');
+
+        // Output Display Elements
+        const outOriginalValue = document.getElementById('out-original-value');
+        const outDiscountRate = document.getElementById('out-discount-rate');
+        const outLimitStatus = document.getElementById('out-limit-status');
+        const outSavedValue = document.getElementById('out-saved-value');
+        
+        // Bar Display Elements
+        const barAfterValue = document.getElementById('bar-after-value');
+        const barSavedValue = document.getElementById('bar-saved-value');
+        const outAfterPercentage = document.getElementById('out-after-percentage');
+        const outSavedPercentage = document.getElementById('out-saved-percentage');
+
+        // Set type button state styling
+        function updateTypeSelection(type) {
+            currentType = type;
+            
+            // Reset all buttons to default white
+            [btnTypeHome, btnTypeRent, btnTypeBusiness].forEach(btn => {
+                btn.className = "py-3.5 px-4 text-left text-xs font-bold rounded-xl border-2 border-brand-goldlight/20 bg-white hover:bg-brand-roselight transition-all tracking-widest flex justify-between items-center text-brand-charcoal";
+                btn.querySelector('span:last-child').className = "text-[10px] text-brand-gold font-normal";
+            });
+
+            // Highlight selected button with imperial green
+            let selectedBtn = btnTypeHome;
+            let subText = "最大 80% 減額 / 330㎡まで";
+            if (type === 'rent') {
+                selectedBtn = btnTypeRent;
+                subText = "最大 50% 減額 / 200㎡まで";
+            } else if (type === 'business') {
+                selectedBtn = btnTypeBusiness;
+                subText = "最大 80% 減額 / 400㎡まで";
+            }
+
+            selectedBtn.className = "py-3.5 px-4 text-left text-xs font-bold rounded-xl border-2 border-brand-green bg-brand-green text-white transition-all tracking-widest flex justify-between items-center";
+            selectedBtn.querySelector('span:last-child').className = "text-[10px] text-brand-roselight";
+            
+            calculateDeduction();
+        }
+
+        function calculateDeduction() {
+            let limitArea = 330;
+            let reductionRate = 0.8; // 80%
+            
+            if (currentType === 'rent') {
+                limitArea = 200;
+                reductionRate = 0.5; // 50%
+            } else if (currentType === 'business') {
+                limitArea = 400;
+                reductionRate = 0.8; // 80%
+            }
+
+            // Calculation logic
+            const originalValue = landSize * landPrice; // in 万円
+            const applicableArea = Math.min(landSize, limitArea);
+            const savedValue = applicableArea * landPrice * reductionRate; // compressed evaluation
+            const afterValue = originalValue - savedValue;
+
+            // Update numerical text displays
+            outOriginalValue.textContent = formatToMan(originalValue);
+            outDiscountRate.textContent = (reductionRate * 100).toString();
+            outSavedValue.textContent = formatToMan(savedValue);
+
+            // Set Limit status text
+            if (landSize <= limitArea) {
+                outLimitStatus.textContent = "敷地全額に特例が適用されます";
+                outLimitStatus.className = "font-bold text-brand-green";
+            } else {
+                outLimitStatus.textContent = `限度超過：${limitArea}㎡分まで適用可能`;
+                outLimitStatus.className = "font-bold text-brand-rose";
+            }
+
+            // Compute percentages for indicator bar representation
+            const savedPercentage = Math.round((savedValue / originalValue) * 100);
+            const afterPercentage = 100 - savedPercentage;
+
+            barAfterValue.style.width = `${afterPercentage}%`;
+            barSavedValue.style.width = `${savedPercentage}%`;
+            
+            outAfterPercentage.textContent = afterPercentage.toString();
+            outSavedPercentage.textContent = savedPercentage.toString();
+        }
+
+        function formatToMan(valueInMan) {
+            if (valueInMan >= 10000) {
+                const oku = Math.floor(valueInMan / 10000);
+                const remainder = valueInMan % 10000;
+                return remainder > 0 ? `${oku}億${remainder.toLocaleString()}` : `${oku}億`;
+            } else {
+                return valueInMan.toLocaleString();
+            }
+        }
+
+        // Hook Input Listeners
+        btnTypeHome.addEventListener('click', () => updateTypeSelection('home'));
+        btnTypeRent.addEventListener('click', () => updateTypeSelection('rent'));
+        btnTypeBusiness.addEventListener('click', () => updateTypeSelection('business'));
+
+        sliderLandSize.addEventListener('input', (e) => {
+            landSize = parseInt(e.target.value);
+            displayLandSize.textContent = `${landSize} ㎡`;
+            calculateDeduction();
+        });
+
+        sliderLandPrice.addEventListener('input', (e) => {
+            landPrice = parseInt(e.target.value);
+            displayLandPrice.textContent = `${landPrice} 万円`;
+            calculateDeduction();
+        });
+
+        // Initialize Simulator Defaults
+        updateTypeSelection('home');
+    </script>
+</body>
+</html>
