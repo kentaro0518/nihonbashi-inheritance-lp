@@ -37,12 +37,61 @@ WordPress カスタムHTML貼り付け用 LP
             background-position: 0 0, 12px 12px;
         }
 
+        :root {
+            /* FV background swap point: change to url('fv-bg.jpg') or url('assets/fv-bg.jpg') when the final image is ready. */
+            --fv-bg-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80');
+        }
+
         /* First View: soft Nihonbashi premium depth without changing other sections */
         .fv-nihonbashi-bg {
             background:
                 radial-gradient(circle at 12% 18%, rgba(197, 169, 130, 0.26), transparent 28%),
                 radial-gradient(circle at 78% 8%, rgba(178, 98, 101, 0.14), transparent 26%),
                 linear-gradient(135deg, #FBF8F2 0%, #F7F1E8 42%, #FDFCF9 100%);
+        }
+        .fv-bg-photo {
+            background-image: var(--fv-bg-image);
+            background-size: cover;
+            background-position: center;
+        }
+        .fv-medal {
+            position: relative;
+            isolation: isolate;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 8.2rem;
+            height: 8.2rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(165, 130, 83, 0.55);
+            background:
+                radial-gradient(circle at 32% 24%, rgba(255,255,255,0.96) 0 13%, transparent 14%),
+                radial-gradient(circle at 50% 46%, #FFF8E8 0 36%, #E8D2A2 60%, #B88A45 100%);
+            box-shadow: inset 0 0 0 6px rgba(255,255,255,0.46), inset 0 0 0 9px rgba(165,130,83,0.24), 0 18px 34px rgba(13,34,24,0.12);
+        }
+        .fv-medal::before {
+            content: '';
+            position: absolute;
+            inset: 0.7rem;
+            border-radius: inherit;
+            border: 1px solid rgba(255,255,255,0.78);
+            box-shadow: inset 0 0 0 1px rgba(128,91,42,0.22);
+            z-index: -1;
+        }
+        .fv-medal::after {
+            content: '';
+            position: absolute;
+            inset: 1.12rem;
+            border-radius: inherit;
+            background: linear-gradient(145deg, rgba(255,255,255,0.44), transparent 42%, rgba(93,61,24,0.10));
+            z-index: -1;
+        }
+        @media (max-width: 639px) {
+            .fv-medal {
+                width: 5rem;
+                height: 5rem;
+                box-shadow: inset 0 0 0 4px rgba(255,255,255,0.46), inset 0 0 0 6px rgba(165,130,83,0.20), 0 12px 20px rgba(13,34,24,0.10);
+            }
         }
         .fv-nihonbashi-bg::before {
             content: '';
@@ -113,12 +162,12 @@ WordPress カスタムHTML貼り付け用 LP
     <div class="relative min-h-screen">
 
         <!-- Navigation Header -->
-        <nav class="fixed w-full bg-brand-silk/90 backdrop-blur-xl z-50 border-b border-brand-goldlight/25 shadow-[0_10px_35px_rgba(13,34,24,0.04)]">
-            <div class="max-w-7xl mx-auto px-5 sm:px-7 lg:px-10">
-                <div class="flex justify-between items-center min-h-[5.25rem] lg:min-h-[6rem] gap-6">
-                    <div class="flex flex-col justify-center py-3 shrink-0">
-                        <span class="text-brand-gold font-bold text-[9px] sm:text-[10px] tracking-[0.28em] uppercase">日本橋の不動産相続専門窓口</span>
-                        <span class="text-brand-green font-bold text-base sm:text-lg lg:text-xl tracking-[0.08em] sm:tracking-[0.12em] mt-1.5 leading-tight">日本橋あんしん不動産・相続相談室</span>
+        <nav class="fixed w-full bg-brand-silk/92 backdrop-blur-xl z-50 border-b border-brand-goldlight/25 shadow-[0_10px_35px_rgba(13,34,24,0.04)]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-7 lg:px-10">
+                <div class="flex justify-between items-center min-h-[4.6rem] sm:min-h-[5.25rem] lg:min-h-[6rem] gap-3 sm:gap-6">
+                    <div class="flex flex-col justify-center py-3 min-w-0 shrink">
+                        <span class="text-brand-gold font-bold text-[8px] sm:text-[10px] tracking-[0.22em] sm:tracking-[0.28em] uppercase">日本橋の不動産相続専門窓口</span>
+                        <span class="text-brand-green font-bold text-sm sm:text-lg lg:text-xl tracking-[0.05em] sm:tracking-[0.12em] mt-1.5 leading-tight">日本橋あんしん不動産・相続相談室</span>
                     </div>
                     <div class="hidden xl:flex items-center gap-8 2xl:gap-10">
                         <a href="#agitation" class="text-brand-charcoal/80 hover:text-brand-rose text-[11px] tracking-[0.22em] transition-colors font-semibold whitespace-nowrap">不動産相続</a>
@@ -131,8 +180,8 @@ WordPress カスタムHTML貼り付け用 LP
                             <span class="text-[9px] text-gray-500 font-bold tracking-[0.18em]">ご相談窓口（平日9:00〜18:00）</span>
                             <span class="text-brand-green font-bold text-base tracking-[0.14em] mt-0.5">03-XXXX-XXXX</span>
                         </div>
-                        <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="inline-flex items-center justify-center px-5 sm:px-7 py-3 rounded-full text-[10px] sm:text-[11px] font-bold text-white bg-brand-green hover:bg-brand-greenlight transition-all shadow-lg shadow-brand-green/15 tracking-[0.2em] whitespace-nowrap">
-                            無料相談予約
+                        <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="inline-flex items-center justify-center px-4 sm:px-7 py-2.5 sm:py-3 rounded-full text-[10px] sm:text-[11px] font-bold text-white bg-brand-green hover:bg-brand-greenlight transition-all shadow-lg shadow-brand-green/15 tracking-[0.14em] sm:tracking-[0.2em] whitespace-nowrap">
+                            無料相談
                         </a>
                     </div>
                 </div>
@@ -140,18 +189,14 @@ WordPress カスタムHTML貼り付け用 LP
         </nav>
 
         <!-- First View (FV) with Tokyo Urban Premium Real Estate Background -->
-        <header class="relative pt-[5.25rem] lg:pt-24 fv-nihonbashi-bg overflow-hidden border-b border-brand-goldlight/20">
-            <!-- Background image layer: replace the URL below to change the Nihonbashi / real estate mood photo. -->
-            <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80"
-                     alt="洗練された都心の不動産アパートマンション外観"
-                     class="w-full h-full object-cover opacity-[0.10] saturate-75 contrast-110">
-                <div class="absolute inset-0 bg-gradient-to-br from-brand-silk/98 via-brand-cream/88 to-brand-silk/72"></div>
-                <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-brand-silk/95 to-transparent"></div>
-            </div>
+        <header class="relative pt-[4.6rem] sm:pt-[5.25rem] lg:pt-24 fv-nihonbashi-bg overflow-hidden border-b border-brand-goldlight/20">
+            <!-- Background image layer: update --fv-bg-image in the style block to swap to fv-bg.jpg or assets/fv-bg.jpg. -->
+            <div class="absolute inset-0 z-0 fv-bg-photo opacity-[0.10] saturate-75 contrast-110" aria-hidden="true"></div>
+            <div class="absolute inset-0 z-0 bg-gradient-to-br from-brand-silk/98 via-brand-cream/90 to-brand-silk/76"></div>
+            <div class="absolute inset-x-0 bottom-0 z-0 h-32 bg-gradient-to-t from-brand-silk/95 to-transparent"></div>
 
-            <div class="max-w-7xl mx-auto px-5 sm:px-7 lg:px-10 relative z-10 pt-10 sm:pt-14 md:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-24">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-11 lg:gap-16 xl:gap-20 items-center">
+            <div class="max-w-7xl mx-auto px-5 sm:px-7 lg:px-10 relative z-10 pt-8 sm:pt-14 md:pt-16 lg:pt-20 pb-14 sm:pb-20 lg:pb-24">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-11 lg:gap-16 xl:gap-20 items-center">
                     <!-- Copywriting & CTA -->
                     <div class="lg:col-span-7 order-1">
                         <div class="inline-flex items-center gap-3 rounded-full border border-brand-goldlight/45 bg-white/72 px-4 sm:px-5 py-2 text-[10px] sm:text-[11px] font-bold text-brand-gold tracking-[0.18em] sm:tracking-[0.24em] shadow-sm backdrop-blur-md">
@@ -163,50 +208,26 @@ WordPress カスタムHTML貼り付け用 LP
                             不動産相続・高額相続に強い女性税理士
                         </p>
 
-                        <h1 class="mt-4 text-[2.15rem] sm:text-[2.75rem] md:text-[3.35rem] lg:text-[3.65rem] font-normal text-brand-green leading-[1.32] sm:leading-[1.36] tracking-[0.03em] sm:tracking-[0.06em]">
-                            日本橋の不動産相続に、<br>
-                            <span class="font-bold text-brand-green">上質な安心</span>と<br class="hidden sm:block">
-                            <span class="font-bold text-brand-gold">緻密な税務戦略</span>を。
+                        <h1 class="mt-4 text-[clamp(1.45rem,7.1vw,2rem)] sm:text-[2.75rem] md:text-[3.35rem] lg:text-[3.65rem] font-normal text-brand-green leading-[1.42] sm:leading-[1.36] tracking-[0.02em] sm:tracking-[0.06em]">
+                            <span class="block whitespace-nowrap">日本橋の不動産相続に、</span>
+                            <span class="block whitespace-nowrap"><span class="font-bold text-brand-green">上質な安心</span>と</span>
+                            <span class="block whitespace-nowrap"><span class="font-bold text-brand-gold">緻密な税務戦略</span>を。</span>
                         </h1>
 
-                        <p class="mt-7 max-w-2xl text-sm sm:text-base text-gray-600 leading-[2.05] tracking-[0.08em] font-medium">
+                        <p class="mt-6 sm:mt-7 max-w-2xl text-sm sm:text-base text-gray-600 leading-[2] sm:leading-[2.05] tracking-[0.07em] sm:tracking-[0.08em] font-medium">
                             代表税理士が初回相談から申告完了まで専属対応。都心不動産の評価、特例適用、書面添付による税務調査対策まで、ご家族の想いに寄り添いながら丁寧に伴走します。
                         </p>
 
-                        <div class="mt-9 max-w-2xl border-y border-brand-goldlight/30 divide-y sm:divide-y-0 sm:divide-x divide-brand-goldlight/25 bg-white/35 backdrop-blur-sm sm:grid sm:grid-cols-3">
-                            <div class="flex items-start gap-3 px-1 sm:px-5 py-4">
-                                <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-brand-gold shrink-0"></span>
-                                <div>
-                                    <span class="block text-[9px] font-bold text-brand-gold tracking-[0.22em]">SUPPORT 01</span>
-                                    <span class="block mt-1 text-xs font-bold text-brand-green tracking-[0.08em] leading-relaxed">代表税理士が専属対応</span>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 px-1 sm:px-5 py-4">
-                                <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-brand-gold shrink-0"></span>
-                                <div>
-                                    <span class="block text-[9px] font-bold text-brand-gold tracking-[0.22em]">SUPPORT 02</span>
-                                    <span class="block mt-1 text-xs font-bold text-brand-green tracking-[0.08em] leading-relaxed">不動産評価・特例に精通</span>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 px-1 sm:px-5 py-4">
-                                <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-brand-gold shrink-0"></span>
-                                <div>
-                                    <span class="block text-[9px] font-bold text-brand-gold tracking-[0.22em]">SUPPORT 03</span>
-                                    <span class="block mt-1 text-xs font-bold text-brand-green tracking-[0.08em] leading-relaxed">書面添付で調査対策</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-10 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
-                            <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-brand-rose px-8 sm:px-11 py-4 text-xs sm:text-sm font-bold text-white tracking-[0.18em] sm:tracking-[0.24em] shadow-xl shadow-brand-rose/25 transition-all hover:-translate-y-0.5 hover:bg-opacity-95">
+                        <div class="mt-7 sm:mt-10 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+                            <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-brand-rose px-8 sm:px-11 py-4 text-xs sm:text-sm font-bold text-white tracking-[0.18em] sm:tracking-[0.24em] shadow-xl shadow-brand-rose/25 ring-1 ring-white/45 transition-all hover:-translate-y-0.5 hover:bg-opacity-95">
                                 初回無料相談を予約する
                             </a>
-                            <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-brand-goldlight/40 bg-transparent px-6 py-3.5 text-[11px] font-bold text-brand-green tracking-[0.16em] transition-all hover:bg-white/55">
+                            <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-brand-goldlight/45 bg-white/30 px-6 py-3.5 text-[11px] font-bold text-brand-green/78 tracking-[0.16em] transition-all hover:bg-white/55">
                                 事前にLINE・メールで相談
                             </a>
                         </div>
 
-                        <div class="mt-5 flex flex-col sm:flex-row gap-1.5 sm:gap-4 text-[11px] text-gray-500 tracking-[0.12em] font-medium">
+                        <div class="mt-4 sm:mt-5 flex flex-row flex-wrap gap-x-4 gap-y-1.5 text-[11px] text-gray-500 tracking-[0.12em] font-medium">
                             <span>初回60分無料</span>
                             <span class="hidden sm:inline text-brand-goldlight">/</span>
                             <span>平日9:00〜18:00</span>
@@ -217,8 +238,8 @@ WordPress カスタムHTML貼り付け用 LP
 
                     <!-- Representative portrait -->
                     <div class="lg:col-span-5 order-2">
-                        <div class="relative max-w-[22rem] sm:max-w-sm mx-auto lg:ml-auto lg:mr-4">
-                            <div class="absolute -inset-4 rounded-[2.4rem] bg-white/45 backdrop-blur-sm"></div>
+                        <div class="relative max-w-[21rem] sm:max-w-sm mx-auto lg:ml-auto lg:mr-4">
+                            <div class="absolute -inset-4 rounded-[2.4rem] bg-white/50 backdrop-blur-sm"></div>
                             <div class="absolute -left-5 -bottom-5 h-32 w-32 rounded-full bg-brand-goldlight/25 blur-2xl"></div>
                             <div class="relative overflow-hidden rounded-[2rem] border border-white/70 bg-gradient-to-br from-white via-brand-silk to-brand-cream shadow-2xl shadow-brand-green/10 p-3">
                                 <div class="overflow-hidden rounded-[1.55rem] aspect-[4/5] bg-brand-cream">
@@ -226,14 +247,37 @@ WordPress カスタムHTML貼り付け用 LP
                                          alt="日本橋の不動産相続に対応する女性税理士"
                                          class="w-full h-full object-cover object-[center_18%] scale-[1.02]">
                                 </div>
-                                <div class="absolute inset-x-3 bottom-3 rounded-b-[1.55rem] bg-gradient-to-t from-brand-green/88 via-brand-green/48 to-transparent px-5 sm:px-6 pt-16 pb-5">
+                                <div class="absolute inset-x-3 bottom-3 rounded-b-[1.55rem] bg-gradient-to-t from-brand-green/92 via-brand-green/66 to-transparent px-5 sm:px-6 pt-20 pb-5">
                                     <p class="text-[10px] font-bold text-brand-goldlight tracking-[0.22em]">REPRESENTATIVE TAX ACCOUNTANT</p>
                                     <p class="mt-1 text-sm sm:text-base font-bold text-white tracking-[0.14em]">女性税理士による、やわらかな専属伴走</p>
                                 </div>
                             </div>
+                            <div class="relative mt-4 rounded-[1.5rem] border border-brand-goldlight/35 bg-gradient-to-br from-white/92 via-brand-silk/96 to-brand-cream/88 px-5 py-4 text-center shadow-xl shadow-brand-green/8 backdrop-blur-md">
+                                <p class="text-[10px] font-bold text-brand-gold tracking-[0.22em]">代表税理士</p>
+                                <p class="mt-1 text-xl font-bold text-brand-green tracking-[0.18em]">宮本 志穂</p>
+                                <p class="mt-2 text-xs font-bold text-brand-charcoal/75 tracking-[0.12em]">宮本志穂税理士事務所</p>
+                                <p class="mt-1 text-[11px] font-semibold text-brand-charcoal/60 tracking-[0.08em]">税理士登録番号：118772</p>
+                            </div>
                             <div class="absolute -right-2 sm:-right-8 top-10 hidden sm:block rounded-2xl border border-brand-goldlight/35 bg-white/86 px-4 py-3 shadow-xl shadow-brand-green/10 backdrop-blur-md">
                                 <p class="text-[10px] font-bold text-brand-gold tracking-[0.18em]">NIHONBASHI</p>
                                 <p class="mt-1 text-xs font-bold text-brand-green tracking-wider">高額不動産相続に対応</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Premium support medals -->
+                    <div class="lg:col-span-7 order-3">
+                        <div class="mt-1 sm:mt-2 max-w-2xl rounded-[2rem] border border-brand-goldlight/25 bg-white/38 px-3 py-5 sm:px-6 sm:py-6 shadow-[0_18px_45px_rgba(13,34,24,0.06)] backdrop-blur-sm">
+                            <div class="grid grid-cols-3 gap-2 sm:gap-4 justify-items-center">
+                                <div class="fv-medal text-center">
+                                    <span class="px-3 text-[9px] sm:text-xs font-bold text-brand-green leading-[1.45] sm:leading-[1.55] tracking-[0.08em]">女性税理士が<br>直接対応</span>
+                                </div>
+                                <div class="fv-medal text-center">
+                                    <span class="px-3 text-[9px] sm:text-xs font-bold text-brand-green leading-[1.45] sm:leading-[1.55] tracking-[0.08em]">不動産相続・<br>特例に精通</span>
+                                </div>
+                                <div class="fv-medal text-center">
+                                    <span class="px-3 text-[9px] sm:text-xs font-bold text-brand-green leading-[1.45] sm:leading-[1.55] tracking-[0.08em]">書面添付で<br>税務調査対策</span>
+                                </div>
                             </div>
                         </div>
                     </div>
