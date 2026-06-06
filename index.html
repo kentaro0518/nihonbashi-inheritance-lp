@@ -81,7 +81,8 @@ WordPress カスタムHTML貼り付け用 LP
                             rose: '#B26265',        /* Deep Luxurious Rose Wood */
                             roselight: '#FAF1F1',
                             charcoal: '#1A1514',
-                            silk: '#FAF8F5'
+                            silk: '#FAF8F5',
+                            cream: '#F4EFE7'
                         }
                     }
                 }
@@ -94,27 +95,25 @@ WordPress カスタムHTML貼り付け用 LP
     <div class="relative min-h-screen">
 
         <!-- Navigation Header -->
-        <nav class="fixed w-full bg-brand-silk/95 backdrop-blur-sm z-50 border-b border-brand-goldlight/20">
+        <nav class="fixed w-full bg-brand-silk/90 backdrop-blur-xl z-50 border-b border-brand-goldlight/20 shadow-[0_8px_30px_rgba(13,34,24,0.04)]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-22">
-                    <div class="flex flex-col justify-center py-2">
-                        <span class="text-brand-gold font-bold text-[9px] tracking-[0.25em] uppercase">日本橋あんしん不動産・相続相談室</span>
-                        <span class="text-brand-green font-bold text-base md:text-lg tracking-widest mt-1">【要確認：事務所名】女性税理士事務所</span>
+                <div class="flex justify-between items-center h-[4.25rem] sm:h-[4.75rem] lg:h-20 gap-5">
+                    <a href="#" class="flex flex-col justify-center min-w-0">
+                        <span class="text-brand-gold font-bold text-[9px] sm:text-[10px] tracking-[0.22em] uppercase">Nihonbashi Estate Inheritance</span>
+                        <span class="text-brand-green font-bold text-sm sm:text-base lg:text-lg tracking-[0.08em] sm:tracking-[0.14em] mt-1 truncate">日本橋あんしん不動産・相続相談室</span>
+                    </a>
+                    <div class="hidden xl:flex items-center gap-8">
+                        <a href="#strengths" class="text-brand-charcoal/80 hover:text-brand-rose text-[11px] tracking-[0.16em] transition-colors font-semibold">選ばれる理由</a>
+                        <a href="#audit" class="text-brand-charcoal/80 hover:text-brand-rose text-[11px] tracking-[0.16em] transition-colors font-semibold">税務調査対策</a>
+                        <a href="#special-deduction" class="text-brand-charcoal/80 hover:text-brand-rose text-[11px] tracking-[0.16em] transition-colors font-semibold">土地減額診断</a>
+                        <a href="#cases" class="text-brand-charcoal/80 hover:text-brand-rose text-[11px] tracking-[0.16em] transition-colors font-semibold">解決事例</a>
                     </div>
-                    <div class="hidden lg:flex items-center space-x-10">
-                        <a href="#agitation" class="text-brand-charcoal hover:text-brand-rose text-xs tracking-widest transition-colors font-semibold">不動産相続の難しさ</a>
-                        <a href="#strengths" class="text-brand-charcoal hover:text-brand-rose text-xs tracking-widest transition-colors font-semibold">選ばれる理由</a>
-                        <a href="#audit" class="text-brand-charcoal hover:text-brand-rose text-xs tracking-widest transition-colors font-semibold">税務調査対策</a>
-                        <a href="#profile" class="text-brand-charcoal hover:text-brand-rose text-xs tracking-widest transition-colors font-semibold">税理士紹介</a>
-                        <a href="#special-deduction" class="text-brand-charcoal hover:text-brand-rose text-xs tracking-widest transition-colors font-semibold">土地減額簡易診断</a>
-                        <a href="#cases" class="text-brand-charcoal hover:text-brand-rose text-xs tracking-widest transition-colors font-semibold">解決事例</a>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <div class="hidden sm:flex flex-col text-right mr-1">
-                            <span class="text-[8px] text-gray-500 font-bold tracking-[0.15em]">ご相談窓口（平日9:00〜18:00）</span>
-                            <span class="text-brand-green font-bold text-sm tracking-widest">【要確認：電話番号】</span>
+                    <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                        <div class="hidden md:flex flex-col text-right mr-1">
+                            <span class="text-[8px] text-gray-500 font-bold tracking-[0.14em]">ご相談窓口（平日9:00〜18:00）</span>
+                            <span class="text-brand-green font-bold text-sm tracking-[0.12em]">03-XXXX-XXXX</span>
                         </div>
-                        <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="inline-flex items-center justify-center px-6 py-3 rounded-full text-[10px] font-bold text-white bg-brand-green hover:bg-brand-greenlight transition-all shadow-md tracking-[0.2em]">
+                        <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="inline-flex items-center justify-center rounded-full border border-brand-green bg-brand-green px-4 sm:px-6 py-2.5 sm:py-3 text-[10px] font-bold text-white hover:bg-brand-greenlight transition-all shadow-sm tracking-[0.16em]">
                             無料相談予約
                         </a>
                     </div>
@@ -123,60 +122,93 @@ WordPress カスタムHTML貼り付け用 LP
         </nav>
 
         <!-- First View (FV) with Tokyo Urban Premium Real Estate Background -->
-        <header class="relative pt-24 bg-white overflow-hidden border-b border-brand-goldlight/20">
-            <!-- Background Real Estate Image - Urban Premium Tokyo View -->
+        <header class="relative pt-[4.25rem] sm:pt-[4.75rem] lg:pt-20 bg-brand-silk overflow-hidden border-b border-brand-goldlight/20">
+            <!-- Background image layer: replace the URL below to change the Nihonbashi / real estate mood photo. -->
             <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80" 
-                     alt="洗練された都心の不動産アパートマンション外観" 
-                     class="w-full h-full object-cover opacity-15 filter blur-[0.3px]">
-                <div class="absolute inset-0 fv-premium-gradient"></div>
+                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80"
+                     alt="洗練された都心の不動産アパートマンション外観"
+                     class="w-full h-full object-cover opacity-[0.10] filter blur-[0.2px]">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(197,169,130,0.20),transparent_34%),radial-gradient(circle_at_82%_24%,rgba(178,98,101,0.14),transparent_30%),linear-gradient(115deg,#FAF8F5_0%,rgba(250,248,245,0.96)_42%,rgba(244,239,231,0.82)_100%)]"></div>
+                <div class="absolute -right-28 top-12 h-72 w-72 rounded-full border border-brand-goldlight/20"></div>
+                <div class="absolute right-8 top-28 h-40 w-40 rounded-full border border-brand-rose/10"></div>
+                <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-brand-silk to-transparent"></div>
             </div>
 
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-16 md:pt-20 lg:pt-24">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
-                    <!-- Copywriting & Strong Badges -->
-                    <div class="lg:col-span-7 pb-16 lg:pb-28">
-                        <div class="inline-flex items-center px-5 py-2 rounded-full text-[10px] font-bold bg-brand-roselight text-brand-rose border border-brand-rose/20 mb-8 tracking-[0.25em]">
-                            🌸 資産3億円以上の不動産・高額相続専門
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-9 sm:pt-12 md:pt-16 lg:pt-[4.5rem] pb-14 sm:pb-16 lg:pb-[4.5rem]">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-9 lg:gap-14 items-center">
+                    <!-- Copywriting & CTA -->
+                    <div class="lg:col-span-7 order-1">
+                        <div class="inline-flex items-center border-l-2 border-brand-gold bg-white/60 px-4 py-2 text-[10px] sm:text-[11px] font-bold text-brand-gold tracking-[0.18em] sm:tracking-[0.24em] backdrop-blur-sm">
+                            日本橋あんしん不動産・相続相談室
                         </div>
-                        <h1 class="text-3xl sm:text-4xl md:text-5xl tracking-widest font-normal text-brand-green leading-[1.6]">
-                            複雑を極める不動産相続に、<br>
-                            <span class="font-bold text-brand-rose">卓越した専門知識</span>と<br>
-                            <span class="font-bold text-brand-gold">女性税理士の緻密な専属伴走</span>を。
-                        </h1>
-                        <p class="mt-6 text-xs md:text-sm text-gray-600 leading-relaxed max-w-xl tracking-wider">
-                            都心の地主様、複数のアパート・一棟ビルを抱える不動産オーナー様へ。特例の戦略的適用、事前のスキーム構築から、生前・事後の複雑な権利調整まで、すべて代表女性税理士が専属対応いたします。
+
+                        <p class="mt-6 text-[11px] sm:text-xs font-bold text-brand-rose tracking-[0.18em] sm:tracking-[0.24em] uppercase">
+                            Real Estate Inheritance / High Net Worth
                         </p>
-                        
-                        <!-- Highly Visible Key Strengths (3 Badges) -->
-                        <div class="mt-10 space-y-4 max-w-lg">
-                            <div class="flex items-center bg-white/95 backdrop-blur-sm p-4 rounded-xl border-l-4 border-brand-rose shadow-sm border border-brand-goldlight/10">
-                                <span class="text-xl mr-4">💎</span>
-                                <span class="text-xs md:text-sm font-bold text-brand-charcoal tracking-widest">代表女性税理士が最初の面談から最後まで責任を持って専属対応</span>
+
+                        <h1 class="mt-4 text-[1.82rem] sm:text-4xl md:text-[2.85rem] lg:text-[3.15rem] font-normal text-brand-green leading-[1.42] sm:leading-[1.38] tracking-[0.035em] sm:tracking-[0.065em]">
+                            日本橋の不動産相続に、<br>
+                            <span class="font-bold">上質な安心</span>と
+                            <span class="font-bold text-brand-gold">緻密な税務戦略</span>を。
+                        </h1>
+
+                        <p class="mt-6 max-w-2xl text-sm sm:text-[15px] text-gray-600 leading-[1.95] tracking-[0.04em] font-medium">
+                            不動産相続・高額相続に強い女性税理士が、初回相談から申告完了まで専属対応。都心不動産の評価、特例適用、書面添付による税務調査対策まで、穏やかに、しかし緻密に伴走します。
+                        </p>
+
+                        <div class="mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-x-5 sm:gap-y-3 max-w-2xl border-y border-brand-goldlight/25 py-4">
+                            <div class="flex items-center gap-3">
+                                <span class="h-1.5 w-1.5 rounded-full bg-brand-gold"></span>
+                                <span class="text-xs font-bold text-brand-green tracking-[0.08em]">代表税理士が専属対応</span>
                             </div>
-                            <div class="flex items-center bg-white/95 backdrop-blur-sm p-4 rounded-xl border-l-4 border-brand-gold shadow-sm border border-brand-goldlight/10">
-                                <span class="text-xl mr-4">🏡</span>
-                                <span class="text-xs md:text-sm font-bold text-brand-charcoal tracking-widest">都心高額地主・不動産管理会社の税務コンサル経験15年以上</span>
+                            <div class="flex items-center gap-3">
+                                <span class="h-1.5 w-1.5 rounded-full bg-brand-gold"></span>
+                                <span class="text-xs font-bold text-brand-green tracking-[0.08em]">不動産評価・特例に精通</span>
                             </div>
-                            <div class="flex items-center bg-white/95 backdrop-blur-sm p-4 rounded-xl border-l-4 border-brand-green shadow-sm border border-brand-goldlight/10">
-                                <span class="text-xl mr-4">🛡️</span>
-                                <span class="text-xs md:text-sm font-bold text-brand-charcoal tracking-widest">書面添付率100％！高額案件でも実地税務調査を極限まで回避</span>
+                            <div class="flex items-center gap-3">
+                                <span class="h-1.5 w-1.5 rounded-full bg-brand-gold"></span>
+                                <span class="text-xs font-bold text-brand-green tracking-[0.08em]">書面添付で税務調査対策</span>
                             </div>
                         </div>
 
-                        <div class="mt-12 sm:flex sm:justify-center lg:justify-start">
-                            <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="w-full sm:w-auto flex items-center justify-center px-10 py-5 text-xs font-bold rounded-full text-white bg-brand-rose hover:bg-opacity-95 transition-all transform hover:scale-102 tracking-[0.25em] shadow-lg shadow-brand-rose/30">
-                                ✉️ 現状を整理する「初回無料相談」を予約
+                        <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+                            <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-brand-rose px-8 sm:px-10 py-4 text-xs sm:text-sm font-bold text-white tracking-[0.14em] sm:tracking-[0.20em] shadow-lg shadow-brand-rose/20 transition-all hover:-translate-y-0.5 hover:bg-opacity-95">
+                                初回無料相談を予約する
                             </a>
+                            <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-brand-goldlight/45 bg-white/65 px-6 py-3.5 text-[11px] font-bold text-brand-green tracking-[0.14em] transition-all hover:bg-white">
+                                LINE・メールで事前相談
+                            </a>
+                        </div>
+
+                        <div class="mt-4 flex flex-col sm:flex-row gap-1 sm:gap-4 text-[11px] text-gray-500 tracking-[0.06em] font-medium">
+                            <span>初回60分無料</span>
+                            <span class="hidden sm:inline text-brand-goldlight">/</span>
+                            <span>平日9:00〜18:00</span>
+                            <span class="hidden sm:inline text-brand-goldlight">/</span>
+                            <span>オンライン相談対応</span>
                         </div>
                     </div>
 
-                    <!-- Portrait Image Integration with high-fidelity styled fallback in case local file loading is restricted -->
-                    <div class="lg:col-span-5 flex justify-center lg:justify-end">
-                        <div class="relative w-full max-w-sm lg:max-w-md min-h-[350px] flex items-end">
-                            <img src="data:image/jpeg;base64,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" 
-                                 alt="日本橋の相続専門女性税理士" 
-                                 class="w-full h-auto object-contain block select-none">
+                    <!-- Representative portrait -->
+                    <div class="lg:col-span-5 order-2">
+                        <div class="relative max-w-[20.5rem] sm:max-w-[22rem] lg:max-w-[23rem] mx-auto lg:ml-auto">
+                            <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-brand-goldlight/20 via-white/40 to-brand-roselight/45 blur-md"></div>
+                            <div class="absolute -left-5 top-10 hidden sm:block h-24 w-[1px] bg-brand-goldlight/60"></div>
+                            <div class="relative overflow-hidden rounded-[1.6rem] border border-brand-goldlight/35 bg-gradient-to-b from-white to-brand-cream shadow-[0_24px_60px_rgba(13,34,24,0.14)]">
+                                <div class="aspect-[4/4.65] bg-gradient-to-b from-white via-white to-brand-cream px-6 pt-5">
+                                    <img src="IMGL0157.png"
+                                         alt="日本橋の不動産相続に対応する女性税理士"
+                                         class="w-full h-full object-contain object-bottom">
+                                </div>
+                                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-green/82 via-brand-green/35 to-transparent px-5 sm:px-6 pt-14 pb-5">
+                                    <p class="text-[10px] font-bold text-brand-goldlight tracking-[0.20em]">REPRESENTATIVE TAX ACCOUNTANT</p>
+                                    <p class="mt-1 text-sm font-bold text-white tracking-[0.10em]">女性税理士による専属伴走</p>
+                                </div>
+                            </div>
+                            <div class="absolute -right-3 sm:-right-8 top-7 hidden sm:block rounded-2xl border border-brand-goldlight/30 bg-brand-silk/90 px-4 py-3 shadow-lg backdrop-blur-sm">
+                                <p class="text-[10px] font-bold text-brand-gold tracking-[0.18em]">NIHONBASHI</p>
+                                <p class="mt-1 text-xs font-bold text-brand-green tracking-wider">高額不動産相続に対応</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -184,39 +216,39 @@ WordPress カスタムHTML貼り付け用 LP
         </header>
 
         <!-- Agitation Section (FV Direct Bottom) - Focused on Nihonbashi Price Inflation -->
-        <section id="agitation" class="py-24 bg-brand-cream border-b border-brand-goldlight/10 relative">
+        <section id="agitation" class="py-14 md:py-20 lg:py-24 bg-brand-cream border-b border-brand-goldlight/10 relative">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-10 md:mb-14 lg:mb-16">
                     <span class="text-xs text-brand-rose font-bold tracking-[0.25em] block mb-3">RISK & ATTENTION</span>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-brand-green tracking-[0.15em] leading-[1.5]">
+                    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-brand-green tracking-[0.08em] md:tracking-[0.15em] leading-[1.5]">
                         【インフレ、不動産相続を一般の税理士に任せて大丈夫？】
                     </h2>
                     <div class="w-16 h-[1px] bg-brand-gold mx-auto mt-5"></div>
                 </div>
 
                 <!-- Nihonbashi Context Alert Box -->
-                <div class="bg-white rounded-3xl p-8 border border-brand-gold/30 shadow-sm max-w-4xl mx-auto mb-16 text-center">
+                <div class="bg-white rounded-3xl p-5 sm:p-6 md:p-8 border border-brand-gold/30 shadow-sm max-w-4xl mx-auto mb-10 md:mb-16 text-center">
                     <span class="inline-block px-4 py-1 bg-brand-roselight text-brand-rose text-[10px] font-bold rounded-full tracking-widest mb-4">⚠️ 地価暴騰・都心不動産インフレの罠</span>
-                    <h3 class="text-lg md:text-xl font-bold text-brand-green mb-4 tracking-widest">
+                    <h3 class="text-base md:text-xl font-bold text-brand-green mb-4 tracking-[0.08em] md:tracking-widest leading-[1.6]">
                         特に日本橋エリアは、23区の中でも「不動産の値上がり率」が極めて高いエリアです
                     </h3>
-                    <p class="text-xs md:text-sm text-gray-600 leading-[2.0] tracking-widest max-w-3xl mx-auto text-left md:text-center font-medium">
+                    <p class="text-xs md:text-sm text-gray-600 leading-[1.9] md:leading-[2.0] tracking-wider md:tracking-widest max-w-3xl mx-auto text-left md:text-center font-medium">
                         近年の急激な都心地価の上昇により、日本橋をはじめとする中央区周辺に土地・マンションをお持ちのご家庭では、**「以前想定していた評価額」を大幅に超え、何もしなければ基礎控除額を上回って課税対象になってしまうケース**が急増しています。不動産を含めた総資産額が3億円を超える場合、適用要件を一つ誤るだけで、税額に数千万円の差が発生します。
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 max-w-5xl mx-auto">
                     <!-- Problem 1 (Restructured: Focus on transfer costs and policy alignment) -->
-                    <div class="bg-white p-8 rounded-2xl border border-brand-goldlight/10 shadow-sm relative">
+                    <div class="bg-white p-5 sm:p-6 md:p-8 rounded-2xl border border-brand-goldlight/10 shadow-sm relative">
                         <div class="absolute -top-4 left-6 bg-brand-rose text-white px-4 py-1 text-[9px] font-bold rounded-md tracking-[0.2em]">課題 ①</div>
                         <h3 class="text-base font-bold text-brand-green mb-3 mt-2 tracking-widest font-sans">移転コストと方針決定のロードマップ</h3>
                         <p class="text-xs text-brand-gold font-bold tracking-wider mb-2">所有権の移転に伴いコストが発生してしまう</p>
                         <p class="text-xs text-gray-600 leading-[1.8] tracking-wider font-medium">
-                            不動産は、所有権を移す度に、イニシャルコストが掛かることと課税関係 of 検討が必要になります。よって、先々、その不動産をどうしたいのか、誰の所有にしたいのかなど丁寧なヒアリングをすることで、課税上最もメリットが出る方法をご案内し、何度も所有権の変更をすることがない様に、方針を固定するのが重要です。
+                            不動産は、所有権を移す度に、イニシャルコストが掛かることと課税関係の検討が必要になります。よって、先々、その不動産をどうしたいのか、誰の所有にしたいのかなど丁寧なヒアリングをすることで、課税上最もメリットが出る方法をご案内し、何度も所有権の変更をすることがない様に、方針を固定するのが重要です。
                         </p>
                     </div>
                     <!-- Problem 2 -->
-                    <div class="bg-white p-8 rounded-2xl border border-brand-goldlight/10 shadow-sm relative">
+                    <div class="bg-white p-5 sm:p-6 md:p-8 rounded-2xl border border-brand-goldlight/10 shadow-sm relative">
                         <div class="absolute -top-4 left-6 bg-brand-rose text-white px-4 py-1 text-[9px] font-bold rounded-md tracking-[0.2em]">課題 ②</div>
                         <h3 class="text-base font-bold text-brand-green mb-4 mt-2 tracking-widest">生前対策・法人化の高度な分岐点判断</h3>
                         <p class="text-xs text-gray-600 leading-[1.8] tracking-wider font-medium">
@@ -224,7 +256,7 @@ WordPress カスタムHTML貼り付け用 LP
                         </p>
                     </div>
                     <!-- Problem 3 -->
-                    <div class="bg-white p-8 rounded-2xl border border-brand-goldlight/10 shadow-sm relative">
+                    <div class="bg-white p-5 sm:p-6 md:p-8 rounded-2xl border border-brand-goldlight/10 shadow-sm relative">
                         <div class="absolute -top-4 left-6 bg-brand-rose text-white px-4 py-1 text-[9px] font-bold rounded-md tracking-[0.2em]">課題 ③</div>
                         <h3 class="text-base font-bold text-brand-green mb-4 mt-2 tracking-widest">都心の高額相続は税務調査に狙われやすい</h3>
                         <p class="text-xs text-gray-600 leading-[1.8] tracking-wider font-medium">
@@ -233,7 +265,7 @@ WordPress カスタムHTML貼り付け用 LP
                     </div>
                 </div>
 
-                <div class="mt-16 text-center bg-brand-roselight p-8 rounded-2xl border border-brand-rose/10 max-w-3xl mx-auto">
+                <div class="mt-10 md:mt-16 text-center bg-brand-roselight p-5 sm:p-6 md:p-8 rounded-2xl border border-brand-rose/10 max-w-3xl mx-auto">
                     <p class="text-xs md:text-sm text-brand-green leading-[1.8] tracking-widest font-bold">
                         💡 高額な都心不動産を安全かつ最適に引き継ぐには、数字の処理だけでなく、親族間の繊細な感情バランスまで整えられるプロフェッショナルによる高度な調整力が最大の鍵となります。
                     </p>
@@ -242,19 +274,19 @@ WordPress カスタムHTML貼り付け用 LP
         </section>
 
         <!-- Selected Strengths (3 Major Benefits) -->
-        <section id="strengths" class="py-24 bg-white border-b border-brand-goldlight/10">
+        <section id="strengths" class="py-14 md:py-20 lg:py-24 bg-white border-b border-brand-goldlight/10">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-20">
+                <div class="text-center mb-10 md:mb-16 lg:mb-20">
                     <span class="text-xs text-brand-gold font-bold tracking-[0.25em] block mb-3">OUR STRENGTHS</span>
-                    <h2 class="text-3xl font-normal text-brand-green tracking-[0.15em]">
+                    <h2 class="text-2xl md:text-3xl font-normal text-brand-green tracking-[0.08em] md:tracking-[0.15em] leading-[1.45]">
                         日本橋あんしん相談室が選ばれる3つの理由
                     </h2>
                     <div class="w-16 h-[1px] bg-brand-gold mx-auto mt-5"></div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-12 max-w-5xl mx-auto">
                     <!-- Strength 1 -->
-                    <div class="bg-brand-cream rounded-3xl p-8 border border-brand-goldlight/15 shadow-sm text-center flex flex-col justify-between items-center">
+                    <div class="bg-brand-cream rounded-3xl p-5 sm:p-6 md:p-8 border border-brand-goldlight/15 shadow-sm text-center flex flex-col justify-between items-center">
                         <div>
                             <div class="w-16 h-16 rounded-full bg-brand-roselight flex items-center justify-center text-brand-rose font-bold text-xl shadow-inner mb-6 mx-auto">
                                 01
@@ -270,7 +302,7 @@ WordPress カスタムHTML貼り付け用 LP
                     </div>
 
                     <!-- Strength 2 -->
-                    <div class="bg-brand-cream rounded-3xl p-8 border border-brand-goldlight/15 shadow-sm text-center flex flex-col justify-between items-center">
+                    <div class="bg-brand-cream rounded-3xl p-5 sm:p-6 md:p-8 border border-brand-goldlight/15 shadow-sm text-center flex flex-col justify-between items-center">
                         <div>
                             <div class="w-16 h-16 rounded-full bg-brand-roselight flex items-center justify-center text-brand-gold font-bold text-xl shadow-inner mb-6 mx-auto">
                                 02
@@ -286,7 +318,7 @@ WordPress カスタムHTML貼り付け用 LP
                     </div>
 
                     <!-- Strength 3 -->
-                    <div class="bg-brand-cream rounded-3xl p-8 border border-brand-goldlight/15 shadow-sm text-center flex flex-col justify-between items-center">
+                    <div class="bg-brand-cream rounded-3xl p-5 sm:p-6 md:p-8 border border-brand-goldlight/15 shadow-sm text-center flex flex-col justify-between items-center">
                         <div>
                             <div class="w-16 h-16 rounded-full bg-brand-roselight flex items-center justify-center text-brand-rose font-bold text-xl shadow-inner mb-6 mx-auto">
                                 03
@@ -305,11 +337,11 @@ WordPress カスタムHTML貼り付け用 LP
         </section>
 
         <!-- Highly Visualized Tax Audit protection Section -->
-        <section id="audit" class="py-24 bg-brand-cream border-b border-brand-goldlight/10">
+        <section id="audit" class="py-14 md:py-20 lg:py-24 bg-brand-cream border-b border-brand-goldlight/10">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-10 md:mb-14 lg:mb-16">
                     <span class="text-xs text-brand-gold font-bold tracking-[0.25em] block mb-3">TAX AUDIT PROTECTION</span>
-                    <h2 class="text-3xl font-normal text-brand-green tracking-[0.15em] leading-snug">
+                    <h2 class="text-2xl md:text-3xl font-normal text-brand-green tracking-[0.08em] md:tracking-[0.15em] leading-snug">
                         安心の差が際立つ。当相談室が提供する「万全の税務調査対策」
                     </h2>
                     <div class="w-16 h-[1px] bg-brand-gold mx-auto mt-5"></div>
@@ -319,13 +351,13 @@ WordPress カスタムHTML貼り付け用 LP
                 </div>
 
                 <!-- High-Contrast Side-by-Side Dashboard -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 lg:gap-12 items-stretch max-w-5xl mx-auto">
                     
                     <!-- Left Column: Danger / Ominous Red Theme -->
-                    <div class="bg-white rounded-3xl border border-red-200 shadow-md p-8 md:p-10 flex flex-col justify-between transition-all hover:scale-[1.01]">
+                    <div class="bg-white rounded-3xl border border-red-200 shadow-md p-5 sm:p-6 md:p-10 flex flex-col justify-between transition-all hover:scale-[1.01]">
                         <div>
                             <!-- Header Warning Tag -->
-                            <div class="flex justify-between items-center border-b border-red-100 pb-5 mb-6">
+                            <div class="flex flex-col sm:flex-row sm:justify-between gap-2 sm:items-center border-b border-red-100 pb-5 mb-6">
                                 <span class="px-4 py-1.5 bg-red-100 text-red-700 text-[10px] font-bold rounded-md tracking-wider">一般的な申告方法（書面添付なし）</span>
                                 <span class="text-red-500 font-bold text-xs tracking-widest">🚨 調査リスク高</span>
                             </div>
@@ -359,13 +391,13 @@ WordPress カスタムHTML貼り付け用 LP
                     </div>
 
                     <!-- Right Column: Safety / Gold-Green Shield Theme (Most Prominent) -->
-                    <div class="bg-[#11291E] rounded-3xl border-4 border-brand-gold shadow-2xl p-8 md:p-10 flex flex-col justify-between text-white relative overflow-hidden transition-all hover:scale-[1.02]">
+                    <div class="bg-[#11291E] rounded-3xl border-4 border-brand-gold shadow-2xl p-5 sm:p-6 md:p-10 flex flex-col justify-between text-white relative overflow-hidden transition-all hover:scale-[1.02]">
                         <!-- Subtle background glow -->
                         <div class="absolute -right-24 -top-24 w-64 h-64 bg-brand-gold/10 rounded-full filter blur-3xl"></div>
                         
                         <div class="relative z-10">
                             <!-- Header Secure Tag -->
-                            <div class="flex justify-between items-center border-b border-brand-greenlight pb-5 mb-6">
+                            <div class="flex flex-col sm:flex-row sm:justify-between gap-2 sm:items-center border-b border-brand-greenlight pb-5 mb-6">
                                 <span class="px-4 py-1.5 bg-brand-gold text-white text-[10px] font-bold rounded-md tracking-widest">当相談室の標準仕様（書面添付100％実施）</span>
                                 <span class="text-brand-gold font-bold text-xs tracking-widest">🛡️ 万全の税務調査対策</span>
                             </div>
@@ -403,7 +435,7 @@ WordPress カスタムHTML貼り付け用 LP
         </section>
 
         <!-- Representative Message Section -->
-        <section id="profile" class="py-24 bg-white border-b border-brand-goldlight/10 overflow-hidden">
+        <section id="profile" class="py-14 md:py-20 lg:py-24 bg-white border-b border-brand-goldlight/10 overflow-hidden">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <!-- Highlighted Focus Banner -->
@@ -428,7 +460,7 @@ WordPress カスタムHTML貼り付け用 LP
                     
                     <div class="lg:w-3/5">
                         <span class="text-xs text-brand-gold font-bold tracking-[0.25em] block mb-3">MESSAGE FROM REPRESENTATIVE</span>
-                        <h2 class="text-2xl md:text-3xl font-bold text-brand-green tracking-[0.15em] mb-6 leading-snug">
+                        <h2 class="text-2xl md:text-3xl font-bold text-brand-green tracking-[0.08em] md:tracking-[0.15em] mb-6 leading-snug">
                             1対1の専属伴走で、<br>
                             複雑極まる資産税務を完全にやり遂げる。
                         </h2>
@@ -450,12 +482,12 @@ WordPress カスタムHTML貼り付け用 LP
         </section>
 
         <!-- Consultation to Solution Flow Section -->
-        <section id="steps" class="py-24 bg-brand-cream border-b border-brand-goldlight/10">
+        <section id="steps" class="py-14 md:py-20 lg:py-24 bg-brand-cream border-b border-brand-goldlight/10">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-10 md:mb-14 lg:mb-16">
                     <span class="text-xs text-brand-gold font-bold tracking-[0.25em] block mb-3">CONSULTATION FLOW</span>
-                    <h2 class="text-3xl font-normal text-brand-green tracking-[0.15em]">
-                        無料相談から、安心 of の解決に至るまでの4ステップ
+                    <h2 class="text-2xl md:text-3xl font-normal text-brand-green tracking-[0.08em] md:tracking-[0.15em] leading-[1.45]">
+                        無料相談から、安心の解決に至るまでの4ステップ
                     </h2>
                     <div class="w-16 h-[1px] bg-brand-gold mx-auto mt-5"></div>
                     <p class="text-xs text-gray-500 mt-6 tracking-widest leading-relaxed">
@@ -501,24 +533,26 @@ WordPress カスタムHTML貼り付け用 LP
                     </div>
 
                     <!-- Step 4 -->
-                    <div class="bg-white rounded-3xl p-6 border border-brand-green text-white text-[10px] font-bold px-3.5 py-1 rounded-full tracking-widest uppercase">Step 04</div>
-                    <div class="pt-4">
-                        <span class="text-3xl block mb-4">🛡️</span>
-                        <h4 class="text-sm font-bold text-brand-green mb-3 tracking-widest">専属サポートと円満解決</h4>
-                        <p class="text-[11px] text-gray-600 leading-[1.8] tracking-wider font-medium">
-                            女性税理士が全ての申告書を作成。書面添付制度（100％実施）により将来の税務調査の不安を完全防御。完了後もチャット等で寄り添い続けます。
-                        </p>
+                    <div class="bg-white rounded-3xl p-6 border border-brand-goldlight/15 shadow-sm flex flex-col justify-between relative">
+                        <div class="absolute -top-4 left-6 bg-brand-green text-white text-[10px] font-bold px-3.5 py-1 rounded-full tracking-widest uppercase">Step 04</div>
+                        <div class="pt-4">
+                            <span class="text-3xl block mb-4">🛡️</span>
+                            <h4 class="text-sm font-bold text-brand-green mb-3 tracking-widest">専属サポートと円満解決</h4>
+                            <p class="text-[11px] text-gray-600 leading-[1.8] tracking-wider font-medium">
+                                女性税理士が全ての申告書を作成。書面添付制度（100％実施）により将来の税務調査の不安を完全防御。完了後もチャット等で寄り添い続けます。
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- NEW: Interactive Real Estate Special Deduction Simulator (小規模宅地等の特例簡易シミュレーター) -->
-        <section id="special-deduction" class="py-24 bg-white border-b border-brand-goldlight/10">
+        <section id="special-deduction" class="py-14 md:py-20 lg:py-24 bg-white border-b border-brand-goldlight/10">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-10 md:mb-14 lg:mb-16">
                     <span class="text-xs text-brand-gold font-bold tracking-[0.25em] block mb-3">LAND SPECIAL DEDUCTION SIMULATOR</span>
-                    <h2 class="text-3xl font-bold text-brand-green tracking-[0.15em]">
+                    <h2 class="text-2xl md:text-3xl font-bold text-brand-green tracking-[0.08em] md:tracking-[0.15em] leading-[1.45]">
                         小規模宅地等の特例 土地評価減額シミュレーション
                     </h2>
                     <div class="w-16 h-[1px] bg-brand-gold mx-auto mt-5"></div>
@@ -528,8 +562,8 @@ WordPress カスタムHTML貼り付け用 LP
                 </div>
 
                 <!-- Simulator Interface Card -->
-                <div class="bg-brand-cream rounded-3xl border border-brand-goldlight/30 shadow-lg p-6 md:p-10 max-w-4xl mx-auto">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                <div class="bg-brand-cream rounded-3xl border border-brand-goldlight/30 shadow-lg p-4 sm:p-6 md:p-10 max-w-4xl mx-auto">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
                         
                         <!-- Left Inputs Column -->
                         <div class="lg:col-span-6 space-y-6">
@@ -539,15 +573,15 @@ WordPress カスタムHTML貼り付け用 LP
                             <div>
                                 <label class="block text-xs font-bold text-brand-charcoal tracking-widest mb-3">① 土地の用途（特例の区分）</label>
                                 <div class="grid grid-cols-1 gap-3">
-                                    <button id="btn-type-home" class="py-3.5 px-4 text-left text-xs font-bold rounded-xl border-2 border-brand-green bg-brand-green text-white transition-all tracking-widest flex justify-between items-center font-sans">
+                                    <button id="btn-type-home" class="py-3 px-3 sm:py-3.5 sm:px-4 text-left text-[11px] sm:text-xs font-bold rounded-xl border-2 border-brand-green bg-brand-green text-white transition-all tracking-wider sm:tracking-widest flex flex-col sm:flex-row gap-1 sm:gap-3 sm:justify-between sm:items-center font-sans">
                                         <span>🏡 亡くなった方の自宅の土地（特定居住用）</span>
                                         <span class="text-[10px] text-brand-roselight">最大 80% 減額 / 330㎡まで</span>
                                     </button>
-                                    <button id="btn-type-rent" class="py-3.5 px-4 text-left text-xs font-bold rounded-xl border-2 border-brand-goldlight/20 bg-white hover:bg-brand-roselight transition-all tracking-widest flex justify-between items-center text-brand-charcoal font-sans">
+                                    <button id="btn-type-rent" class="py-3 px-3 sm:py-3.5 sm:px-4 text-left text-[11px] sm:text-xs font-bold rounded-xl border-2 border-brand-goldlight/20 bg-white hover:bg-brand-roselight transition-all tracking-wider sm:tracking-widest flex flex-col sm:flex-row gap-1 sm:gap-3 sm:justify-between sm:items-center text-brand-charcoal font-sans">
                                         <span>🏢 貸している土地・アパート等（貸付事業用）</span>
                                         <span class="text-[10px] text-brand-gold font-normal">最大 50% 減額 / 200㎡まで</span>
                                     </button>
-                                    <button id="btn-type-business" class="py-3.5 px-4 text-left text-xs font-bold rounded-xl border-2 border-brand-goldlight/20 bg-white hover:bg-brand-roselight transition-all tracking-widest flex justify-between items-center text-brand-charcoal font-sans">
+                                    <button id="btn-type-business" class="py-3 px-3 sm:py-3.5 sm:px-4 text-left text-[11px] sm:text-xs font-bold rounded-xl border-2 border-brand-goldlight/20 bg-white hover:bg-brand-roselight transition-all tracking-wider sm:tracking-widest flex flex-col sm:flex-row gap-1 sm:gap-3 sm:justify-between sm:items-center text-brand-charcoal font-sans">
                                         <span>🏪 お店や事務所の土地（特定事業用）</span>
                                         <span class="text-[10px] text-brand-gold font-normal">最大 80% 減額 / 400㎡まで</span>
                                     </button>
@@ -584,20 +618,20 @@ WordPress カスタムHTML貼り付け用 LP
                         </div>
 
                         <!-- Right Results Column -->
-                        <div class="lg:col-span-6 bg-white rounded-2xl border border-brand-goldlight/25 p-6 md:p-8 flex flex-col justify-between h-full shadow-inner">
+                        <div class="lg:col-span-6 bg-white rounded-2xl border border-brand-goldlight/25 p-4 sm:p-6 md:p-8 flex flex-col justify-between h-full shadow-inner">
                             <div>
                                 <h4 class="text-xs font-bold text-brand-gold tracking-widest mb-6 uppercase font-sans">Calculation Result / 特例試算結果</h4>
                                 
                                 <div class="space-y-4 text-xs mb-6 font-sans">
-                                    <div class="flex justify-between border-b border-brand-silk pb-2">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-brand-silk pb-2">
                                         <span class="text-gray-500 tracking-wider">土地の更地評価額（特例適用前）</span>
                                         <span class="font-bold text-brand-charcoal"><span id="out-original-value">1億9,800</span>万円</span>
                                     </div>
-                                    <div class="flex justify-between border-b border-brand-silk pb-2">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-brand-silk pb-2">
                                         <span class="text-gray-500 tracking-wider">特例による減額の割合</span>
                                         <span class="font-bold text-brand-rose"><span id="out-discount-rate">80</span>% 減額</span>
                                     </div>
-                                    <div class="flex justify-between border-b border-brand-silk pb-2">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-brand-silk pb-2">
                                         <span class="text-gray-500 tracking-wider">限度面積判定</span>
                                         <span class="font-bold text-brand-charcoal"><span id="out-limit-status">全額に適用可能</span></span>
                                     </div>
@@ -610,14 +644,14 @@ WordPress カスタムHTML貼り付け用 LP
                                         <div id="bar-after-value" class="h-full bg-brand-green transition-all duration-300" style="width: 20%;"></div>
                                         <div id="bar-saved-value" class="h-full bg-brand-rose transition-all duration-300" style="width: 80%;"></div>
                                     </div>
-                                    <div class="flex justify-between text-[9px] text-gray-400 mt-1.5 tracking-wider">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between gap-1 text-[9px] text-gray-400 mt-1.5 tracking-wider">
                                         <span>適用後評価額 (<span id="out-after-percentage">20</span>%)</span>
                                         <span class="text-brand-rose font-bold">特例による減額分 (<span id="out-saved-percentage">80</span>%)</span>
                                     </div>
                                 </div>
 
                                 <!-- Substantial Reduction Amount -->
-                                <div class="text-center bg-brand-roselight/50 rounded-xl p-5 border border-brand-rose/10">
+                                <div class="text-center bg-brand-roselight/50 rounded-xl p-4 sm:p-5 border border-brand-rose/10">
                                     <span class="text-[10px] text-brand-rose font-bold tracking-[0.2em] block mb-1">特例による土地評価の減額額（圧縮枠）</span>
                                     <p class="text-2xl md:text-3xl font-bold text-brand-rose tracking-wide">
                                         ▲ <span id="out-saved-value">1億5,840</span>万円
@@ -648,23 +682,23 @@ WordPress カスタムHTML貼り付け用 LP
         </section>
 
         <!-- Case Studies Section -->
-        <section id="cases" class="py-24 bg-brand-cream border-b border-brand-goldlight/10">
+        <section id="cases" class="py-14 md:py-20 lg:py-24 bg-brand-cream border-b border-brand-goldlight/10">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-20">
+                <div class="text-center mb-10 md:mb-16 lg:mb-20">
                     <span class="text-xs text-brand-gold font-bold tracking-[0.25em] block mb-3">CASE STUDIES</span>
-                    <h2 class="text-3xl font-bold text-brand-green tracking-[0.15em]">
+                    <h2 class="text-2xl md:text-3xl font-bold text-brand-green tracking-[0.08em] md:tracking-[0.15em] leading-[1.45]">
                         不動産相続・税務対策の実績解決事例
                     </h2>
                     <div class="w-16 h-[1px] bg-brand-gold mx-auto mt-5"></div>
                 </div>
 
-                <div class="space-y-12 max-w-5xl mx-auto">
+                <div class="space-y-6 md:space-y-10 lg:space-y-12 max-w-5xl mx-auto">
                     <!-- Case 1 -->
-                    <div class="bg-white rounded-3xl p-8 md:p-10 border border-brand-goldlight/10 shadow-sm flex flex-col md:flex-row gap-8 items-center">
+                    <div class="bg-white rounded-3xl p-5 sm:p-6 md:p-10 border border-brand-goldlight/10 shadow-sm flex flex-col md:flex-row gap-5 md:gap-8 items-center">
                         <div class="md:w-1/4 text-center">
                             <span class="text-xs font-bold text-brand-rose tracking-[0.2em] uppercase">Case 01</span>
                             <h4 class="text-lg font-bold text-brand-green mt-1 tracking-widest">評価額の圧倒的圧縮</h4>
-                            <div class="text-5xl my-4">🏡</div>
+                            <div class="text-4xl sm:text-5xl my-3 sm:my-4">🏡</div>
                             <span class="inline-block px-4 py-1.5 bg-brand-roselight text-brand-rose text-[9px] font-bold rounded-full tracking-widest">実家の相続</span>
                         </div>
                         <div class="md:w-3/4">
@@ -672,7 +706,7 @@ WordPress カスタムHTML貼り付け用 LP
                             <p class="text-xs text-gray-600 leading-[1.8] tracking-wider mb-5 font-medium">
                                 【状況】他界されたお母様と同居されていたご親族。一般的な事務所では「要件に若干の不確実性あり」とされ特例適用を見送られそうになっていましたが、当事務所が土地の境界線調査、同居実態の公的書類を緻密に整備。
                             </p>
-                            <div class="bg-brand-cream p-4 rounded-xl border border-brand-gold/15 flex flex-wrap justify-between items-center text-xs tracking-wider font-semibold">
+                            <div class="bg-brand-cream p-3 sm:p-4 rounded-xl border border-brand-gold/15 flex flex-wrap justify-between items-center text-xs tracking-wider font-semibold">
                                 <span class="text-gray-500">当初の想定評価額：約8,200万円</span>
                                 <span class="font-bold text-brand-rose">▶︎ 対策後評価額：1,640万円（約6,500万円の圧縮成功）</span>
                             </div>
@@ -680,11 +714,11 @@ WordPress カスタムHTML貼り付け用 LP
                     </div>
 
                     <!-- Case 2 -->
-                    <div class="bg-white rounded-3xl p-8 md:p-10 border border-brand-goldlight/10 shadow-sm flex flex-col md:flex-row gap-8 items-center">
+                    <div class="bg-white rounded-3xl p-5 sm:p-6 md:p-10 border border-brand-goldlight/10 shadow-sm flex flex-col md:flex-row gap-5 md:gap-8 items-center">
                         <div class="md:w-1/4 text-center">
                             <span class="text-xs font-bold text-brand-rose tracking-[0.2em] uppercase">Case 02</span>
                             <h4 class="text-lg font-bold text-brand-green mt-1 tracking-widest font-sans">トータル移転コスト対策</h4>
-                            <div class="text-5xl my-4">🏢</div>
+                            <div class="text-4xl sm:text-5xl my-3 sm:my-4">🏢</div>
                             <span class="inline-block px-4 py-1.5 bg-brand-roselight text-brand-rose text-[9px] font-bold rounded-full tracking-widest">賃貸アパート・一棟ビル</span>
                         </div>
                         <div class="md:w-3/4">
@@ -692,7 +726,7 @@ WordPress カスタムHTML貼り付け用 LP
                             <p class="text-xs text-gray-600 leading-[1.8] tracking-wider mb-5 font-medium">
                                 【状況】複数アパートを所有し、所得税率の高騰と先々の相続に悩まれていたオーナー様。将来の親族間での遺産分割と最終的な所有権の着地点を丁寧なヒアリングで整理。何度も登記費用や取得税を発生させないよう、設立当初から「最終出口」を意識した最適な資産管理法人スキームを構築しました。
                             </p>
-                            <div class="bg-brand-cream p-4 rounded-xl border border-brand-gold/15 flex flex-wrap justify-between items-center text-xs tracking-wider font-semibold">
+                            <div class="bg-brand-cream p-3 sm:p-4 rounded-xl border border-brand-gold/15 flex flex-wrap justify-between items-center text-xs tracking-wider font-semibold">
                                 <span class="text-gray-500">対策前の名義・課税予測：無駄な多重登記コストと高額な所得税</span>
                                 <span class="font-bold text-brand-rose">▶︎ 対策後：1度の手続きで将来への移転方針を完全固定 ＆ 年間手残り約310万円アップ</span>
                             </div>
@@ -700,11 +734,11 @@ WordPress カスタムHTML貼り付け用 LP
                     </div>
 
                     <!-- Case 3 -->
-                    <div class="bg-white rounded-3xl p-8 md:p-10 border border-brand-goldlight/10 shadow-sm flex flex-col md:flex-row gap-8 items-center">
+                    <div class="bg-white rounded-3xl p-5 sm:p-6 md:p-10 border border-brand-goldlight/10 shadow-sm flex flex-col md:flex-row gap-5 md:gap-8 items-center">
                         <div class="md:w-1/4 text-center">
                             <span class="text-xs font-bold text-brand-rose tracking-[0.2em] uppercase">Case 03</span>
                             <h4 class="text-lg font-bold text-brand-green mt-1 tracking-widest">生前贈与と二次相続</h4>
-                            <div class="text-5xl my-4">🛡️</div>
+                            <div class="text-4xl sm:text-5xl my-3 sm:my-4">🛡️</div>
                             <span class="inline-block px-4 py-1.5 bg-brand-roselight text-brand-rose text-[9px] font-bold rounded-full tracking-widest">相続人複数の場合</span>
                         </div>
                         <div class="md:w-3/4">
@@ -712,7 +746,7 @@ WordPress カスタムHTML貼り付け用 LP
                             <p class="text-xs text-gray-600 leading-[1.8] tracking-wider mb-5 font-medium">
                                 【状況】複数の貸家と遊休地を保有するオーナー様。相続税申告にあたって不動産評価のロジック、生前の資金移動の明確な説明を記載した『書面添付』を行い、提出。税務調査を一切受けることなく完了。
                             </p>
-                            <div class="bg-brand-cream p-4 rounded-xl border border-brand-gold/15 flex flex-wrap justify-between items-center text-xs tracking-wider font-semibold">
+                            <div class="bg-brand-cream p-3 sm:p-4 rounded-xl border border-brand-gold/15 flex flex-wrap justify-between items-center text-xs tracking-wider font-semibold">
                                 <span class="text-gray-500">不動産相続・財産額：約3.5億円</span>
                                 <span class="font-bold text-brand-green">▶︎ 書面添付率 100% 適用：税務署からの直接調査なしで無事完了</span>
                             </div>
@@ -723,11 +757,11 @@ WordPress カスタムHTML貼り付け用 LP
         </section>
 
         <!-- FAQ Accordion -->
-        <section id="faq" class="py-24 bg-white">
+        <section id="faq" class="py-14 md:py-20 lg:py-24 bg-white">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+                <div class="text-center mb-10 md:mb-14 lg:mb-16">
                     <span class="text-xs text-brand-rose font-bold tracking-[0.25em] block mb-3">Q&A</span>
-                    <h2 class="text-3xl font-bold text-brand-green tracking-[0.15em]">
+                    <h2 class="text-2xl md:text-3xl font-bold text-brand-green tracking-[0.08em] md:tracking-[0.15em] leading-[1.45]">
                         不動産相続のよくあるご質問
                     </h2>
                     <div class="w-16 h-[1px] bg-brand-gold mx-auto mt-5"></div>
@@ -735,11 +769,11 @@ WordPress カスタムHTML貼り付け用 LP
 
                 <div class="space-y-4">
                     <div class="bg-brand-cream border border-brand-goldlight/20 rounded-xl overflow-hidden shadow-sm">
-                        <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-brand-cream hover:bg-brand-roselight transition-all">
-                            <span class="font-bold text-brand-green text-xs md:text-sm tracking-widest">Q. 他の税理士事務所に相談中ですが、セカンドオピニオンも可能ですか？</span>
-                            <span class="faq-icon text-brand-rose font-bold text-sm">▼</span>
+                        <button class="faq-btn w-full px-4 sm:px-6 py-4 sm:py-5 text-left flex justify-between items-center gap-3 focus:outline-none bg-brand-cream hover:bg-brand-roselight transition-all">
+                            <span class="font-bold text-brand-green text-xs md:text-sm tracking-wider md:tracking-widest flex-1">Q. 他の税理士事務所に相談中ですが、セカンドオピニオンも可能ですか？</span>
+                            <span class="faq-icon text-brand-rose font-bold text-sm shrink-0">▼</span>
                         </button>
-                        <div class="faq-answer px-6 bg-white text-gray-600 text-xs font-medium">
+                        <div class="faq-answer px-4 sm:px-6 bg-white text-gray-600 text-xs font-medium">
                             <div class="pb-6 pt-3 leading-[1.8] tracking-wider font-sans">
                                 A. はい、お気軽にお越しください。「今の説明で小規模宅地等の特例が完全に使えているか不安」「もう少し分かりやすく丁寧に説明してほしい」といった理由での転院・並行相談を多数受けております。
                             </div>
@@ -747,11 +781,11 @@ WordPress カスタムHTML貼り付け用 LP
                     </div>
 
                     <div class="bg-white border border-brand-goldlight/20 rounded-xl overflow-hidden shadow-sm">
-                        <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-brand-cream hover:bg-brand-roselight transition-all">
-                            <span class="font-bold text-brand-green text-xs md:text-sm tracking-widest">Q. 書面添付制度を使うと何がそこまで違うのですか？</span>
-                            <span class="faq-icon text-brand-rose font-bold text-sm">▼</span>
+                        <button class="faq-btn w-full px-4 sm:px-6 py-4 sm:py-5 text-left flex justify-between items-center gap-3 focus:outline-none bg-brand-cream hover:bg-brand-roselight transition-all">
+                            <span class="font-bold text-brand-green text-xs md:text-sm tracking-wider md:tracking-widest flex-1">Q. 書面添付制度を使うと何がそこまで違うのですか？</span>
+                            <span class="faq-icon text-brand-rose font-bold text-sm shrink-0">▼</span>
                         </button>
-                        <div class="faq-answer px-6 bg-white text-gray-600 text-xs font-medium">
+                        <div class="faq-answer px-4 sm:px-6 bg-white text-gray-600 text-xs font-medium">
                             <div class="pb-6 pt-3 leading-[1.8] tracking-wider font-sans">
                                 A. 書面添付を行うことで、税務署からいきなり納税者に「税務調査が入る」のではなく、まず事前に税理士へ「意見聴取」が求められます。当相談室が事前に適正な根拠を示して回答することで、約8割以上の確率で直接調査が回避され、実地調査なしで完了します。
                             </div>
@@ -759,11 +793,11 @@ WordPress カスタムHTML貼り付け用 LP
                     </div>
 
                     <div class="bg-white border border-brand-goldlight/20 rounded-xl overflow-hidden shadow-sm">
-                        <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-white hover:bg-brand-roselight transition-all">
-                            <span class="font-bold text-brand-green text-xs md:text-sm tracking-widest">Q. 不動産オーナーではない、一般的な相続についても相談可能ですか？</span>
-                            <span class="faq-icon text-brand-rose font-bold text-sm">▼</span>
+                        <button class="faq-btn w-full px-4 sm:px-6 py-4 sm:py-5 text-left flex justify-between items-center gap-3 focus:outline-none bg-white hover:bg-brand-roselight transition-all">
+                            <span class="font-bold text-brand-green text-xs md:text-sm tracking-wider md:tracking-widest flex-1">Q. 不動産オーナーではない、一般的な相続についても相談可能ですか？</span>
+                            <span class="faq-icon text-brand-rose font-bold text-sm shrink-0">▼</span>
                         </button>
-                        <div class="faq-answer px-6 bg-white text-gray-600 text-xs font-medium">
+                        <div class="faq-answer px-4 sm:px-6 bg-white text-gray-600 text-xs font-medium">
                             <div class="pb-6 pt-3 leading-[1.8] tracking-wider font-sans">
                                 A. もちろんです。不動産をお持ちでない場合や、一般的な現金・有価証券の相続手続き・生前贈与についても、きめ細やかに専属対応いたしますので安心してご連絡ください。
                             </div>
@@ -774,19 +808,19 @@ WordPress カスタムHTML貼り付け用 LP
         </section>
 
         <!-- Ultimate Call to Action & Consultation Panel -->
-        <footer id="contact" class="bg-brand-green text-white pt-24 pb-28 lg:pb-12 relative overflow-hidden border-t-8 border-brand-gold">
+        <footer id="contact" class="bg-brand-green text-white pt-16 md:pt-20 lg:pt-24 pb-28 lg:pb-12 relative overflow-hidden border-t-8 border-brand-gold">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                 <span class="text-xs text-brand-gold font-bold tracking-[0.25em] block mb-4">FREE CONSULTATION</span>
-                <h2 class="text-3xl font-bold text-white mb-6 leading-[1.5]">不動産相続の不安、まずはお気軽にお話しください</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 leading-[1.5]">不動産相続の不安、まずはお気軽にお話しください</h2>
                 <p class="text-brand-roselight text-xs md:text-sm mb-12 max-w-lg mx-auto leading-[1.8] tracking-widest font-medium">
-                    料金を心配されることなく、まずは現状 of 財産評価や、将来もめないためのアドバイスを『初回60分完全無料』にてお受けいたします。強引な売り込みなどは絶対に行いませんのでご安心ください。
+                    料金を心配されることなく、まずは現状の財産評価や、将来もめないためのアドバイスを『初回60分完全無料』にてお受けいたします。強引な売り込みなどは絶対に行いませんのでご安心ください。
                 </p>
                 
-                <div class="flex flex-col sm:flex-row justify-center gap-6 mb-16 max-w-md mx-auto">
-                    <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="px-8 py-4.5 bg-brand-rose text-white text-xs font-bold rounded-full hover:bg-opacity-95 transition-all shadow-lg flex items-center justify-center tracking-[0.25em] text-center font-bold">
+                <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mb-12 md:mb-16 max-w-md mx-auto">
+                    <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="px-6 sm:px-8 py-4 sm:py-[1.125rem] bg-brand-rose text-white text-xs font-bold rounded-full hover:bg-opacity-95 transition-all shadow-lg flex items-center justify-center tracking-[0.25em] text-center font-bold">
                         ✉️ 無料相談 予約フォームはこちら
                     </a>
-                    <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="px-8 py-4.5 bg-white text-brand-green text-xs font-bold rounded-full hover:bg-gray-50 transition-all shadow-lg flex items-center justify-center tracking-[0.25em] text-center font-bold">
+                    <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="px-6 sm:px-8 py-4 sm:py-[1.125rem] bg-white text-brand-green text-xs font-bold rounded-full hover:bg-gray-50 transition-all shadow-lg flex items-center justify-center tracking-[0.25em] text-center font-bold">
                         💬 LINEでちょっと質問してみる
                     </a>
                 </div>
@@ -810,10 +844,10 @@ WordPress カスタムHTML貼り付け用 LP
         <!-- Floating Bottom CTA for Smartphone Conversion Optimization -->
         <div id="floating-cta" class="floating-cta fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t border-brand-goldlight/30 px-4 py-3 z-40 lg:hidden shadow-[0_-5px_20px_rgba(0,0,0,0.05)]">
             <div class="grid grid-cols-2 gap-3 max-w-md mx-auto">
-                <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="flex items-center justify-center py-3 bg-brand-rose text-white text-[10px] font-bold rounded-full shadow-md tracking-wider text-center font-bold">
+                <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="flex items-center justify-center px-2 py-3 bg-brand-rose text-white text-[10px] font-bold rounded-full shadow-md tracking-wider text-center font-bold">
                     ✉️ 無料相談 予約フォーム
                 </a>
-                <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="flex items-center justify-center py-3 bg-brand-green text-white text-[10px] font-bold rounded-full shadow-md tracking-wider text-center font-bold">
+                <a href="https://nihonbashi-anshin-souzoku.com/contact/" target="_blank" class="flex items-center justify-center px-2 py-3 bg-brand-green text-white text-[10px] font-bold rounded-full shadow-md tracking-wider text-center font-bold">
                     💬 公式LINEで質問
                 </a>
             </div>
@@ -885,7 +919,7 @@ WordPress カスタムHTML貼り付け用 LP
             
             // Reset all buttons to default white
             [btnTypeHome, btnTypeRent, btnTypeBusiness].forEach(btn => {
-                btn.className = "py-3.5 px-4 text-left text-xs font-bold rounded-xl border-2 border-brand-goldlight/20 bg-white hover:bg-brand-roselight transition-all tracking-widest flex justify-between items-center text-brand-charcoal";
+                btn.className = "py-3 px-3 sm:py-3.5 sm:px-4 text-left text-[11px] sm:text-xs font-bold rounded-xl border-2 border-brand-goldlight/20 bg-white hover:bg-brand-roselight transition-all tracking-wider sm:tracking-widest flex flex-col sm:flex-row gap-1 sm:gap-3 sm:justify-between sm:items-center text-brand-charcoal";
                 btn.querySelector('span:last-child').className = "text-[10px] text-brand-gold font-normal";
             });
 
@@ -900,7 +934,7 @@ WordPress カスタムHTML貼り付け用 LP
                 subText = "最大 80% 減額 / 400㎡まで";
             }
 
-            selectedBtn.className = "py-3.5 px-4 text-left text-xs font-bold rounded-xl border-2 border-brand-green bg-brand-green text-white transition-all tracking-widest flex justify-between items-center";
+            selectedBtn.className = "py-3 px-3 sm:py-3.5 sm:px-4 text-left text-[11px] sm:text-xs font-bold rounded-xl border-2 border-brand-green bg-brand-green text-white transition-all tracking-wider sm:tracking-widest flex flex-col sm:flex-row gap-1 sm:gap-3 sm:justify-between sm:items-center";
             selectedBtn.querySelector('span:last-child').className = "text-[10px] text-brand-roselight";
             
             calculateDeduction();
